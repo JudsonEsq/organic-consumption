@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxSpeed = 10f;
     Rigidbody2D playerBody;
 
+    private Animator anim;
+    private SpriteRenderer spriteRenderer;
+
     // do you are not dead?
     private bool dead = false;
 
@@ -20,6 +23,24 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerBody = transform.GetComponent<Rigidbody2D>();
+
+        anim = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        anim.SetFloat("Speed", playerBody.velocity.magnitude);
+
+        // Flip character 
+        if (horiMove > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
     // Update is called once per frame
@@ -32,6 +53,7 @@ public class PlayerController : MonoBehaviour
         // the player becoming insanely fast. In case we want high acceleration!
         Mathf.Clamp(horiMove, -maxSpeed, maxSpeed);
         Mathf.Clamp(vertMove, -maxSpeed, maxSpeed);
+
 
         if (!dead)
         {
