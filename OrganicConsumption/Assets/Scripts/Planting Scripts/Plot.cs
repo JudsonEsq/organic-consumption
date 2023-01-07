@@ -7,11 +7,10 @@ public class Plot : MonoBehaviour
     [HideInInspector] public bool planted;
     [HideInInspector] public Plant plant;
 
-
+    private bool interact;
 
     private void Harvest()
     {
-        Debug.Log("Harvest");
         // Whatever is supposed to happen during harvest goes here
         plant.StopGrowth();
 
@@ -20,18 +19,33 @@ public class Plot : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        // Testing for input in update
+        if (!interact) return;
+        if (plant == null) return;
+        if (plant.plantState != Plant.PlantState.Ripe) return;
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Harvest();
+        }
+    }
+
     // If the player is the plot range, make it possible to harvest. 
     private void OnTriggerStay2D(Collider2D collider)
     {
-        if (plant == null) return;
-        if (plant.plantState != Plant.PlantState.Ripe) return;
-      
         if (collider.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Harvest();
-            }
+            interact = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            interact = false;
         }
     }
 }

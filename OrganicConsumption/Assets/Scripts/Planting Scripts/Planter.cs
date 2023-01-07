@@ -39,7 +39,6 @@ public class Planter : MonoBehaviour
         // Running A planting session after a specified time
         if (Time.time > nextLoop + deliveryDelay)
         {
-            Debug.Log("Next session");
             StopAllCoroutines();
 
             // Increase number of deliveries

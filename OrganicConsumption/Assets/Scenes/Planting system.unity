@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantingRate: 3
-  plantingWaitTime: 1
+  plantingWaitTime: 0.5
   deliveryDelay: 10
   numberOfDeliveries: 1
   numberOfSeeds: 0
