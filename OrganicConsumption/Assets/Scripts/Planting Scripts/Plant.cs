@@ -86,7 +86,7 @@ public class Plant : MonoBehaviour
             case PlantSO.PlantVariety.Pineapple:
                 Vector3 targetPos = player.transform.position;
                 GameObject pineapple = Instantiate<GameObject>(plantSO.AttackPrefab, transform.position, new Quaternion(0, 0, 0, 0));
-                pineapple.GetComponent<ProjectileBehavior>().setTargetPos(targetPos);
+                pineapple.GetComponent<ProjectileBehavior>().SetTargetPos(targetPos);
                 attackCooldown = 0;
                 break;
             case PlantSO.PlantVariety.Berry:

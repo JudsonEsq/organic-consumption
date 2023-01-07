@@ -13,7 +13,7 @@ public class ProjectileBehavior : MonoBehaviour
 
     private Vector3 tarDirec;
     
-    public void setTargetPos(Vector3 tar)
+    public void SetTargetPos(Vector3 tar)
     {
         targetPos = tar;
         tarDirec = targetPos - transform.position;
@@ -45,7 +45,7 @@ public class ProjectileBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("you been struck by");
-            collision.gameObject.GetComponent<PlayerStats>().damage(3);
+            collision.gameObject.GetComponent<PlayerStats>().Damage(3);
         }
     }
 }

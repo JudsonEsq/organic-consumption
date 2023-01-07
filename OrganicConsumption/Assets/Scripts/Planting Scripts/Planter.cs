@@ -131,7 +131,7 @@ public class Planter : MonoBehaviour
         }
 
         // The planter goes offscreen when it is done planting, until it is needed again.
-        var homePosition = new Vector3(-8, 7, 0);
+        var homePosition = new Vector3(-15, 12, 0);
         destinationReached = false;
         while (!destinationReached)
         {

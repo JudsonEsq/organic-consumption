@@ -14,30 +14,30 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         pCont = gameObject.GetComponent<PlayerController>();
-        restart();
+        Restart();
     }
 
-    public void restart()
+    public void Restart()
     {
         health = 3;
         transform.position = new Vector2(0, 0);
         transform.GetComponent<PlayerController>().Reset();
     }
 
-    public void damage(int amount)
+    public void Damage(int amount)
     {
         health -= amount;
         if(health <= 0)
         {
-            die();
+            Die();
         }
     }
 
-    private void die()
+    private void Die()
     {
-        pCont.die();
+        pCont.Die();
         gameOver.SetActive(true);
         planter.SetActive(false);
-        transform.GetComponent<PlayerController>().die();
+        transform.GetComponent<PlayerController>().Die();
     }
 }
