@@ -33,7 +33,10 @@ public class PlayerController : MonoBehaviour
         Mathf.Clamp(horiMove, -maxSpeed, maxSpeed);
         Mathf.Clamp(vertMove, -maxSpeed, maxSpeed);
 
-        playerBody.velocity = new Vector2(horiMove, vertMove);
+        if (!dead)
+        {
+            playerBody.velocity = new Vector2(horiMove, vertMove);
+        }
     }
 
     public void die()

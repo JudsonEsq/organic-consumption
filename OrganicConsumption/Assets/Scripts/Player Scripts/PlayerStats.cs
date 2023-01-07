@@ -8,15 +8,13 @@ public class PlayerStats : MonoBehaviour
     // This should be the canvas for the game over screen
     [SerializeField] GameObject gameOver;
     [SerializeField] GameObject planter;
+    PlayerController pCont;
+
     // Start is called before the first frame update
     void Start()
     {
+        pCont = gameObject.GetComponent<PlayerController>();
         restart();
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
     }
 
     public void restart()
@@ -26,23 +24,18 @@ public class PlayerStats : MonoBehaviour
         transform.GetComponent<PlayerController>().Reset();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void damage(int amount)
     {
-        // MUST ASSIGN THIS TO TAG FOR DAMAGING OBJECTS
-        if (collision.otherCollider.gameObject.CompareTag("damage"))
+        health -= amount;
+        if(health <= 0)
         {
-            health--;
-            if (health <= 0)
-            {
-                // For now, we will simply have this appear and disappear on death.
-                // TODO: Make this rotate or in some way animate the death screen into vision. 
-                die();
-            }
+            die();
         }
     }
 
     private void die()
     {
+        pCont.die();
         gameOver.SetActive(true);
         planter.SetActive(false);
         transform.GetComponent<PlayerController>().die();

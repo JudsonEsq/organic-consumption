@@ -17,9 +17,10 @@ public class MenuMotion : MonoBehaviour
 
     }
 
-    public void Transition()
+    public async void Transition()
     {
-        transform.DOScale(new Vector3(0.8f, 0.8f, 0), 0.2f);
-        transform.DOMove(new Vector3(-6f, 6, 1), 1f);
+        await transform.DOScale(new Vector3(0.8f, 0.8f, 1f), 0.2f).AsyncWaitForCompletion();
+        transform.DOLocalMove(new Vector3(-600f, 800f, 0), 1f);
+        transform.DORotate(new Vector3(0f, 0f, 45f), 1f);
     }
 }
