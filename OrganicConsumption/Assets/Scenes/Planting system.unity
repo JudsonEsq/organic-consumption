@@ -461,7 +461,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
   m_FlipX: 0
@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 1755160413}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -768,7 +768,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1755160415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,8 +938,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651f00aab0b5c2e40a0bd7905e6663c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantingRate: 2
+  plantingRate: 3
   plantingWaitTime: 1
+  deliveryDelay: 10
+  numberOfDeliveries: 1
+  numberOfSeeds: 0
   plots:
   - {fileID: 1543762876739797380}
   - {fileID: 819844797}
@@ -949,8 +952,8 @@ MonoBehaviour:
   - {fileID: 1764399332}
   plantTypes:
   - {fileID: 11400000, guid: bb6ceae0f41e2174297281f653daaffd, type: 2}
-  - {fileID: 11400000, guid: b20d79e66428c394083fa5075ab2c077, type: 2}
-  - {fileID: 11400000, guid: 6bdb19af26676aa4fbf0319ca8029896, type: 2}
+  - {fileID: 11400000, guid: b592c1afba115b349a0d8306347fe017, type: 2}
+  - {fileID: 11400000, guid: 954e8d34d7556eb4fb086bacb00d8e50, type: 2}
   plantParent: {fileID: 1134175881}
   plantPrefab: {fileID: 4383518450379838885, guid: bfb8b8b29590ab145aefee34adc41160, type: 3}
 --- !u!4 &1968602743
