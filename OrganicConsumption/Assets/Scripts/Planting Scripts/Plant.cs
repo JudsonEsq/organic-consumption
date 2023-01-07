@@ -85,9 +85,7 @@ public class Plant : MonoBehaviour
         {
             case PlantSO.PlantVariety.Pineapple:
                 Vector3 targetPos = player.transform.position;
-
-
-
+                Instantiate<GameObject>(plantSO.AttackPrefab, transform.position, new Quaternion(0, 0, 0, 0));
                 break;
             case PlantSO.PlantVariety.Berry:
                 break;

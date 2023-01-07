@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class ProjectileBehavior : MonoBehaviour
 {
-    Vector3 targetPos;
+    private Vector3 targetPos;
     
     // How far away the target position is
-    float distance;
+    private float distance;
     // How far the pineapple has travelled
-    float travelled;
+    private float travelled = 0;
 
-    Vector3 tarDirec;
+    private Vector3 tarDirec;
     
-    // Start is called before the first frame update
-    void Start()
+    void setTargetPos(Vector3 tar)
     {
+        targetPos = tar;
         tarDirec = targetPos - transform.position;
         distance = tarDirec.magnitude;
-        travelled = 0;
     }
-
 
     // Update is called once per frame
     void Update()
@@ -37,15 +35,18 @@ public class ProjectileBehavior : MonoBehaviour
 
         float currScale = 2 * travelled - Mathf.Pow(travelled, 2) + 1;
         transform.localScale = new Vector3(currScale, currScale, currScale);
+        Debug.Log(travelled);
+        transform.position += tarDirec * (Time.deltaTime / 2f);
+        transform.Rotate(new Vector3(0, 0, 150 * Time.deltaTime));
         
     }
 
-    public void OnTriggerEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("you been struck by");
-            collision.collider.gameObject.GetComponent<PlayerStats>().damage(3);
+            collision.gameObject.GetComponent<PlayerStats>().damage(3);
         }
     }
 }

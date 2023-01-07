@@ -9,16 +9,12 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] GameObject gameOver;
     [SerializeField] GameObject planter;
     PlayerController pCont;
+
     // Start is called before the first frame update
     void Start()
     {
         pCont = gameObject.GetComponent<PlayerController>();
         restart();
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
     }
 
     public void restart()
@@ -39,10 +35,9 @@ public class PlayerStats : MonoBehaviour
 
     private void die()
     {
-        Debug.Log("I am dead as FUCK");
+        pCont.die();
         gameOver.SetActive(true);
         planter.SetActive(false);
         transform.GetComponent<PlayerController>().die();
-        pCont.die();
     }
 }
