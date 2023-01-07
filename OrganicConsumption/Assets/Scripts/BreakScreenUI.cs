@@ -1,49 +1,72 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System.Collections;
 
 public class BreakScreenUI : MonoBehaviour
 {
     [SerializeField] Image blackPanel;
     [SerializeField] RectTransform breakTimeImage;
     [SerializeField] RectTransform breakMenuUI;
+    [SerializeField] float breakDuration = 30;
 
-    private int stepIndex = 0;
     public float speed;
     public Ease easeType;
     public int menuYOffset = 520;
-
-    private void OnEnable()
-    {
-        stepIndex = 0;
-        breakMenuUI.localPosition = new Vector3(0, -menuYOffset, 0);
-        ProcessUI();
-    }
+    bool shopping = false;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T)) ProcessUI();
+        if (Input.GetKeyDown(KeyCode.Space) && shopping)
+        {
+            StopCoroutine(ProcessUI());
+            shopping = false;
+        }
     }
 
-    private void ProcessUI()
+    public void BreakTime()
     {
-        switch (stepIndex)
+        breakMenuUI.localPosition = new Vector3(0, -menuYOffset, 0);
+        StartCoroutine(ProcessUI());
+    }
+
+    private IEnumerator ProcessUI()
+    {
+        Debug.Log("ProcessUI started");
+        /*
+         * switch (stepIndex)
+         * {
+         *     case 0:
+         *         blackPanel.color = new Color(0, 0, 0, 0.8f);
+         *         SlideBreakText();
+         *         stepIndex++;
+         *         break;
+         *     case 1:
+         *         breakTimeImage.gameObject.SetActive(false);
+         *         SlideBreakMenu(true);
+         *         stepIndex++;
+         *         break;
+         *     case 2:
+         *         SlideBreakMenu(false);
+         *         stepIndex = 0;
+         *         break;
+         * }
+         *
+         */
+        blackPanel.color = new Color(0, 0, 0, 0.8f);
+        SlideBreakText();
+        yield return new WaitForSeconds(0.2f);
+        while(!Input.anyKeyDown)
         {
-            case 0:
-                blackPanel.color = new Color(0, 0, 0, 0.8f);
-                SlideBreakText();
-                stepIndex++;
-                break;
-            case 1:
-                breakTimeImage.gameObject.SetActive(false);
-                SlideBreakMenu(true);
-                stepIndex++;
-                break;
-            case 2:
-                SlideBreakMenu(false);
-                stepIndex = 0;
-                break;
+            yield return null;
         }
+        Debug.Log("Any Key Pressed");
+        breakTimeImage.gameObject.SetActive(false);
+        SlideBreakMenu(true);
+        shopping = true;
+        yield return (new WaitForSeconds(breakDuration));
+        shopping = false;
+
     }
     
     private void SlideBreakText()

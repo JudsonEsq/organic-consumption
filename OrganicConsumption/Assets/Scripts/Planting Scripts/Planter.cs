@@ -37,20 +37,28 @@ public class Planter : MonoBehaviour
     private void Update()
     {
         // Running A planting session after a specified time
-        if (Time.time > nextLoop + deliveryDelay)
+        if (numberOfDeliveries % 8 != 0)
         {
-            StopAllCoroutines();
 
-            // Increase number of deliveries
-            numberOfDeliveries++;
-            // Scale the number of seeds
-            PlantingSession();
+            if (Time.time > nextLoop + deliveryDelay)
+            {
+                StopAllCoroutines();
 
-            // Start the planting
-            StartCoroutine(PlantSeeds());
+                // Increase number of deliveries
+                numberOfDeliveries++;
+                // Scale the number of seeds
+                PlantingSession();
 
-            // Set next loop
-            nextLoop = Time.time;
+                // Start the planting
+                StartCoroutine(PlantSeeds());
+
+                // Set next loop
+                nextLoop = Time.time;
+            }
+        }
+        else
+        {
+
         }
     }
 

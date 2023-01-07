@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    int health;
+    private int health;
+    public int scrip;
     // This should be the canvas for the game over screen
     [SerializeField] GameObject gameOver;
     [SerializeField] GameObject planter;
@@ -31,6 +32,11 @@ public class PlayerStats : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void Heal(int amount)
+    {
+        health += amount;
     }
 
     private void Die()
