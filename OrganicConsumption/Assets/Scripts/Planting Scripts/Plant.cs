@@ -59,4 +59,41 @@ public class Plant : MonoBehaviour
     {
         this.plantSO = plantSO;
     }
+
+
+    [SerializeField] private GameObject player;
+    float attackCooldown;
+
+    public void Awake()
+    {
+        attackCooldown = 0;
+    }
+
+    public void FixedUpdate()
+    {
+        attackCooldown += Time.deltaTime;
+    }
+
+    public void Attack()
+    {
+        if(plantState != PlantState.Deadly || attackCooldown < plantSO.AttackCooldown)
+        {
+            return;
+        }
+
+        switch(plantSO.plantVariety)
+        {
+            case PlantSO.PlantVariety.Pineapple:
+                Vector3 targetPos = player.transform.position;
+
+
+
+                break;
+            case PlantSO.PlantVariety.Berry:
+                break;
+            default:
+                break;
+        }
+
+    }
 }

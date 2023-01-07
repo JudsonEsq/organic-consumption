@@ -73,6 +73,8 @@ public class Planter : MonoBehaviour
         if (plantTypes == null || plantTypes.Count == 0) yield break;
         if (plantPrefab == null) yield break;
 
+        bool destinationReached = false;
+
         // Shuffle the list before a planting session
         ShuffleList(plots);
 
@@ -92,7 +94,7 @@ public class Planter : MonoBehaviour
 
             // Move the planter to the location and then plant the seed.
             var plotPosition = plot.transform.position;
-            bool destinationReached = false;
+            destinationReached = false;
             while (!destinationReached)
             {
                 transform.position = Vector2.MoveTowards(transform.position, plotPosition, plantingRate * Time.deltaTime);
@@ -127,6 +129,23 @@ public class Planter : MonoBehaviour
 
             numberOfPlantedSeeds++;
         }
+
+        // The planter goes offscreen when it is done planting, until it is needed again.
+        var homePosition = new Vector3(-8, 7, 0);
+        destinationReached = false;
+        while (!destinationReached)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, homePosition, plantingRate * 2f * Time.deltaTime);
+            //transform.DOMove(plotPosition, plantingRate);
+
+            if (Vector2.Distance(transform.position, homePosition) <= 0.1f)
+            {
+                destinationReached = true;
+            }
+
+            yield return null;
+        }
+
     }
 
     private void Scaling() {
@@ -145,4 +164,5 @@ public class Planter : MonoBehaviour
             inputList[randomIndex] = temp;
         }
     }
+
 }
