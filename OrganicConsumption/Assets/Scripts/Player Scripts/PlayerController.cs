@@ -6,13 +6,15 @@ public class PlayerController : MonoBehaviour
 {
     // The player's current vertical and horizontal momentum.
     // Set to 0 by default in case they are ever undefined, for some reason.
-    float horiMove = 0f;
-    float vertMove = 0f;
+    private float horiMove = 0f;
+    private float vertMove = 0f;
     // Multiplier that affects how fast the player can move
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float maxSpeed = 10f;
     Rigidbody2D playerBody;
 
+    // do you are not dead?
+    private bool dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,4 +36,18 @@ public class PlayerController : MonoBehaviour
         playerBody.velocity = new Vector2(horiMove, vertMove);
     }
 
+    public void die()
+    {
+        dead = true;
+    }
+
+    public void Reset()
+    {
+        transform.position = new Vector3(0, 0, 0);
+        dead = false;
+        horiMove = 0f;
+        vertMove = 0f;
+    }
+
+    
 }
