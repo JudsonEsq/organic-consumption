@@ -61,31 +61,33 @@ public class Plant : MonoBehaviour
     }
 
 
-    [SerializeField] private GameObject player;
+    private GameObject player;
     float attackCooldown;
 
     public void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         attackCooldown = 0;
     }
 
     public void FixedUpdate()
     {
         attackCooldown += Time.deltaTime;
+        if (attackCooldown > plantSO.AttackCooldown && plantState == PlantState.Deadly)
+        {
+            Attack();
+        }
     }
 
     public void Attack()
     {
-        if(plantState != PlantState.Deadly || attackCooldown < plantSO.AttackCooldown)
-        {
-            return;
-        }
-
         switch(plantSO.plantVariety)
         {
             case PlantSO.PlantVariety.Pineapple:
                 Vector3 targetPos = player.transform.position;
-                Instantiate<GameObject>(plantSO.AttackPrefab, transform.position, new Quaternion(0, 0, 0, 0));
+                GameObject pineapple = Instantiate<GameObject>(plantSO.AttackPrefab, transform.position, new Quaternion(0, 0, 0, 0));
+                pineapple.GetComponent<ProjectileBehavior>().setTargetPos(targetPos);
+                attackCooldown = 0;
                 break;
             case PlantSO.PlantVariety.Berry:
                 break;

@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95036f845ea61c64783bc0901f4b0145, type: 3}
   m_Name: Plant 1
   m_EditorClassIdentifier: 
+  plantVariety: 1
+  AttackCooldown: 4
+  AttackPrefab: {fileID: 4136200217352980169, guid: 41583fa0c812ad549ba02f89ca4a93b1, type: 3}
   plantGrowthStages:
   - {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
   - {fileID: 21300000, guid: 70632ddfe8e71b04b8f90ef7e29a9e98, type: 3}
   - {fileID: 21300000, guid: 3a0c527d7f890d64a9b56b086e6e766a, type: 3}
   - {fileID: 21300000, guid: fd098fb4cf57bad419701c802e442b7e, type: 3}
-  growthTime: 7
+  growthTime: 1

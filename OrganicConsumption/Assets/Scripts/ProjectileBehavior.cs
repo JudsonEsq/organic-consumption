@@ -13,7 +13,7 @@ public class ProjectileBehavior : MonoBehaviour
 
     private Vector3 tarDirec;
     
-    void setTargetPos(Vector3 tar)
+    public void setTargetPos(Vector3 tar)
     {
         targetPos = tar;
         tarDirec = targetPos - transform.position;
@@ -35,7 +35,6 @@ public class ProjectileBehavior : MonoBehaviour
 
         float currScale = 2 * travelled - Mathf.Pow(travelled, 2) + 1;
         transform.localScale = new Vector3(currScale, currScale, currScale);
-        Debug.Log(travelled);
         transform.position += tarDirec * (Time.deltaTime / 2f);
         transform.Rotate(new Vector3(0, 0, 150 * Time.deltaTime));
         
