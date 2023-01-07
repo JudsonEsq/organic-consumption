@@ -9,10 +9,8 @@ public class PlayerController : MonoBehaviour
     float horiMove = 0f;
     float vertMove = 0f;
     // Multiplier that affects how fast the player can move
-    [SerializeField]
-    float moveSpeed = 10f;
-    [SerializeField]
-    float maxSpeed = 10f;
+    [SerializeField] float moveSpeed = 10f;
+    [SerializeField] float maxSpeed = 10f;
     Rigidbody2D playerBody;
 
 
@@ -23,7 +21,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         horiMove = Input.GetAxis("Horizontal") * moveSpeed;
         vertMove = Input.GetAxis("Vertical") * moveSpeed;
@@ -35,4 +33,5 @@ public class PlayerController : MonoBehaviour
 
         playerBody.velocity = new Vector2(horiMove, vertMove);
     }
+
 }
