@@ -14,6 +14,10 @@ public class PlantSO : ScriptableObject
     public int numberOfButtonPress = 3;
     [Tooltip("Minimum time, in seconds, between attacks")]
     public float AttackCooldown;
+    [Tooltip("Radius for melee plants with melee attacks")]
+    public float meleeAtackRadius = 5f;
+    [Tooltip("Rate at which melee plant gets ready to attack")]
+    public float meleeAttackTriggerRate = 2f;
     [Tooltip("What prefab to spawn as an attack when attacking")]
     public GameObject AttackPrefab;
 
@@ -22,6 +26,6 @@ public class PlantSO : ScriptableObject
 
     [Tooltip("Sprites to use at each stage of growth")]
     public Sprite[] plantGrowthStages = new Sprite[4];
-    // This is time it takes for the plant to move from the first stage to the last
+    [Tooltip("This is time it takes for the plant to move from the first stage to the last")]
     public float growthTime = 5f; 
 }

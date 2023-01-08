@@ -9,10 +9,11 @@ public class Plant : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public enum PlantState { Seed, Sprout, Ripe, Deadly}
     public PlantState plantState;
-    
 
+    private LayerMask playerLayerMask;
     public void Init()
     {
+        playerLayerMask = LayerMask.GetMask("Player");
         plantState = PlantState.Seed;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
@@ -67,11 +68,17 @@ public class Plant : MonoBehaviour
     }
 
     private GameObject player;
+    private PlayerStats playerStats;
     float attackCooldown;
 
     public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerStats = player.GetComponent<PlayerStats>();
+        }
+      
         attackCooldown = 0;
     }
 
@@ -87,6 +94,9 @@ public class Plant : MonoBehaviour
 
     private Vector3 animPunch = new Vector3(1f, 0.7f, 1f);
     private float animDuration = 0.35f;
+
+    [SerializeField] private float meleeAttackTriggerCounter; // For Melee attacks 
+
     public void Attack()
     {
         switch(plantSO.plantVariety)
@@ -99,10 +109,68 @@ public class Plant : MonoBehaviour
                 attackCooldown = 0;
                 break;
             case PlantSO.PlantVariety.Berry:
+                // Melee Attack
+                // Check if player is in range and wind up for attack.
+                var result = Physics2D.OverlapCircle(transform.position, plantSO.meleeAtackRadius, playerLayerMask);
+                if(result == null)
+                {
+                    meleeAttackTriggerCounter -= Time.deltaTime * plantSO.meleeAttackTriggerRate;
+                }
+                else
+                {
+                    meleeAttackTriggerCounter += Time.deltaTime * plantSO.meleeAttackTriggerRate;
+                }
+                meleeAttackTriggerCounter = Mathf.Clamp(meleeAttackTriggerCounter, 0, 100);
+
+                // Color indication 
+                ColorIndication();
+                // Trigger attack after wind up is complete
+                if (meleeAttackTriggerCounter >= 100)
+                {
+                    // Trigger Melee Attack
+
+                    if (playerStats != null)
+                    {
+                        // Damage player
+                        playerStats.Damage(1);
+                    }
+                   
+                    meleeAttackTriggerCounter = 0;
+                    spriteRenderer.color = Color.white;
+
+                    attackCooldown = 0;
+                    
+                }
+
                 break;
             default:
                 break;
         }
 
+    }
+
+    public void ColorIndication()
+    {
+        if (meleeAttackTriggerCounter <= 30)
+        {
+            // White 
+            spriteRenderer.color = Color.white;
+        }
+        else if (meleeAttackTriggerCounter > 30 && meleeAttackTriggerCounter <= 60)
+        {
+            // Yellow
+            spriteRenderer.color = Color.yellow;
+        }
+        else if (meleeAttackTriggerCounter > 60 && meleeAttackTriggerCounter <= 90)
+        {
+            // Orange
+            var color = new Color(1, 0.64f, 0f);
+            spriteRenderer.color = color;
+        }
+        else
+        {
+            // Red
+            spriteRenderer.color = Color.red;
+        }
     }
 }
