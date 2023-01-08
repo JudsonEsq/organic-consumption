@@ -67,6 +67,7 @@ public class BreakScreenUI : MonoBehaviour
         breakTimeImage.gameObject.SetActive(false);
         SlideBreakMenu(true);
         yield return (new WaitForSeconds(breakDuration));
+        SlideBreakMenu(false);
         shopping = false;
 
     }

@@ -314,6 +314,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -217
       objectReference: {fileID: 0}
+    - target: {fileID: 434567766029761100, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434567766029761102, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: breakDuration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 434567766080839496, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_Name
       value: EmptySlot
@@ -1589,6 +1597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+--- !u!1 &1617960679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 434567766029761100, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+  m_PrefabInstance: {fileID: 32902595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1641313649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,6 +2606,7 @@ MonoBehaviour:
   plantingRate: 12
   plantingWaitTime: 0.5
   deliveryDelay: 15
+  breakInterval: 2
   plots:
   - {fileID: 1543762876739797380}
   - {fileID: 1500767021}
@@ -2614,6 +2628,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b592c1afba115b349a0d8306347fe017, type: 2}
   plantParent: {fileID: 1134175881}
   plantPrefab: {fileID: 4383518450379838885, guid: bfb8b8b29590ab145aefee34adc41160, type: 3}
+  breakPanel: {fileID: 1617960679}
 --- !u!4 &1968602743
 Transform:
   m_ObjectHideFlags: 0
