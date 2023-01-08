@@ -1,20 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance { get; private set; }
 
-    [Header("References:")]
-    public RectTransform startScreenUI;
-    public RectTransform pauseScreenUI;
-    public RectTransform hudScreenUI;
-    public SettingsMenu settingsUI;
-    public RectTransform creditsUI;
-    public RectTransform terminationScreenUI;
+    [Header("References:"), SerializeField]
+    RectTransform startScreenUI;
+    [SerializeField] GameObject startButton;
+    [SerializeField] RectTransform pauseScreenUI;
+    [SerializeField] RectTransform hudScreenUI;
+    [SerializeField] RectTransform terminationScreenUI;
+    [Space, SerializeField]
+    RectTransform ModalBackground;
+    [SerializeField] SettingsMenu settingsUI;
+    [SerializeField] RectTransform creditsUI;
 
-    public bool onMainMenu = true;
+    public bool isPlaying = true;
     bool isPaused = false;
 
     private void Awake()
@@ -27,27 +31,31 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) TogglePause();
-        if (Input.GetKeyDown(KeyCode.B)) ToggleBreak();
+        if (Input.GetKeyDown(KeyCode.Space)) TogglePauseScreen();
+        if (Input.GetKeyDown(KeyCode.B)) EnableBreakScreen(); // for testing
         if (Input.GetKeyDown(KeyCode.P)) OpenDeathScreen();
+        if (Input.GetKeyDown(KeyCode.Escape)) CloseModals();
     }
-
+    
     public RectTransform breakScreen;
-    void ToggleBreak()
+    public void EnableBreakScreen()
     {
         breakScreen.gameObject.SetActive(true);
     }
+
     private void SwitchActiveScreen(RectTransform targetMenu)
     {
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
-        onMainMenu = (targetMenu == startScreenUI)? true : false;
+        Debug.Log(startButton);
+        if (targetMenu == startScreenUI) EventSystem.current.SetSelectedGameObject(startButton);
+        isPlaying = (targetMenu == hudScreenUI)? true : false;
         targetMenu.gameObject.SetActive(true);
     }
     
-    public void StartGame()
+    public void OpenGameScreen()
     {
         Debug.Log("Starting Game...");
         SwitchActiveScreen(hudScreenUI);
@@ -55,14 +63,15 @@ public class UIManager : MonoBehaviour
     }
 
     bool settingsOpen = false;
-    public void OpenSettings()
+    public void ToggleSettings()
     {
         SettingsMenu.instance.AnimateBackPanel(!settingsOpen);
         settingsOpen = !settingsOpen;
+        ModalBackground.gameObject.SetActive(settingsOpen);
     }
 
     bool creditsOpen = false;
-    public void OpenCredits()
+    public void ToggleCredits()
     {
         if (!creditsOpen)
         {
@@ -73,11 +82,12 @@ public class UIManager : MonoBehaviour
             creditsUI.gameObject.SetActive(false);
         }
         creditsOpen = !creditsOpen;
+        ModalBackground.gameObject.SetActive(creditsOpen);
     }
 
-    public void TogglePause()
+    public void TogglePauseScreen()
     {
-        if (onMainMenu) return;
+        if (!isPlaying) return;
         if (isPaused == false)
         {
             pauseScreenUI.gameObject.SetActive(true);
@@ -92,7 +102,7 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quitting Game....");
-        if (isPaused) TogglePause();
+        if (isPaused) TogglePauseScreen();
         SwitchActiveScreen(startScreenUI);
         // Comunicate to Game Manager to stop play
     }
@@ -107,5 +117,17 @@ public class UIManager : MonoBehaviour
         terminationScreenUI.gameObject.SetActive(true);
         background.DOFade(0.8f, 0.5f);
         terminationScreenUI.GetChild(1).DOMoveY(0, 1, true).SetEase(terminationCurve);
+    }
+
+    public void CloseModals()
+    {
+        if (settingsOpen)
+        {
+            ToggleSettings();
+        }
+        else if (creditsOpen)
+        {
+            ToggleCredits();
+        }
     }
 }

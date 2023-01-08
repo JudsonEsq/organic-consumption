@@ -10,7 +10,7 @@ public class SettingsMenu : MonoBehaviour
 
     [SerializeField] RectTransform topPanel;
     [SerializeField] RectTransform bottomPanel;
-    static int offsetPos = 1230;
+    static int offsetPos = 1210;
 
     [SerializeField] RectTransform settingsSliders;
 
@@ -19,7 +19,7 @@ public class SettingsMenu : MonoBehaviour
         if (instance != null) Debug.LogWarning("Attempting to create multiple instances of Settings Menu.");
         else instance = this;
 
-        topPanel.localPosition = new Vector3(-offsetPos, -1, 0);
+        topPanel.localPosition = new Vector3(-offsetPos, 0, 0);
         bottomPanel.localPosition = new Vector3(offsetPos, 0, 0);
         //offsetPos = (int)bottomPanel.localPosition.x;
     }
@@ -28,7 +28,7 @@ public class SettingsMenu : MonoBehaviour
     {
         if (opening)
         {
-            topPanel.localPosition = new Vector3(-offsetPos, -1, 0);
+            topPanel.localPosition = new Vector3(-offsetPos, 0, 0);
             bottomPanel.localPosition = new Vector3(offsetPos, 0, 0);
 
             topPanel.DOAnchorPosX(0, 0.6f, false);
