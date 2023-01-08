@@ -42,7 +42,7 @@ public class PlayerStats : MonoBehaviour
     private void Die()
     {
         pCont.Die();
-        gameOver.SetActive(true);
+        UIManager.instance.OpenDeathScreen();
         planter.SetActive(false);
         transform.GetComponent<PlayerController>().Die();
     }
