@@ -17,7 +17,12 @@ public class BreakScreenUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && shopping)
+        if (Input.GetKeyDown(KeyCode.T) && !shopping)
+        {
+            BreakTime();
+        }
+
+        if (Input.GetKeyDown(KeyCode.T) && shopping)
         {
             StopCoroutine(ProcessUI());
             shopping = false;
