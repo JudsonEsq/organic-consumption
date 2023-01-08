@@ -11,6 +11,11 @@ public class Planter : MonoBehaviour
     private int numberOfDeliveries;
     private int numberOfSeeds;
 
+    private bool onBreak;
+    private int sessionDeliveries;
+
+    [SerializeField] private int breakInterval = 8;
+
     [SerializeField] private List<Plot> plots;
     [SerializeField] private List<PlantSO> plantTypes;
     [SerializeField] private GameObject plantParent;
@@ -22,19 +27,43 @@ public class Planter : MonoBehaviour
     private Vector3 homePosition = new Vector3(-15, 12, 0);
     private bool gameplayActive = false;
 
+    [SerializeField] private GameObject breakPanel;
+    private BreakScreenUI breakScrn;
+
 
     private void Start()
     {
 
         // The start of deliveries
         numberOfDeliveries = 1;
+        sessionDeliveries = 0;
         numberOfSeeds = 0;
+        onBreak = false;
+        breakScrn = breakPanel.GetComponent<BreakScreenUI>();
+        Debug.Log(breakScrn == null);
     }
 
     private void Update()
     {
+
+        if(sessionDeliveries % breakInterval == 0)
+        {
+            if (!onBreak)
+            {
+                breakPanel.SetActive(true);
+                breakScrn.BreakTime();
+                onBreak = true;
+                HardReset(false);
+            }
+            else if (!breakScrn.IsShopping())
+            {
+                onBreak = false;
+                gameplayActive = true;
+                sessionDeliveries = 0;
+            }
+        }
         // Running A planting session after a specified time
-        if (numberOfDeliveries % 8 != 0 && gameplayActive)
+        else if (gameplayActive)
         {
             if (Time.time > nextLoop + deliveryDelay)
             {
@@ -48,16 +77,13 @@ public class Planter : MonoBehaviour
                 // Start the planting
                 StartCoroutine(PlantSeeds());
 
+                sessionDeliveries++;
+
                 // Set next loop
                 nextLoop = Time.time;
             }
         }
-        else if(numberOfDeliveries > 5 && !gameplayActive)
-        {
-            // PLACEHOLDER
-            // THIS IS WHERE BREAK TIME CODE GOES
-            numberOfDeliveries++;
-        }
+        
     }
 
 
@@ -85,7 +111,6 @@ public class Planter : MonoBehaviour
         ShuffleList(plots);
 
         var numberOfPlantedSeeds = 0;
-
         if(numberOfDeliveries > 1) FindObjectOfType<AudioManager>().Play("Siren");
 
         foreach (var plot in plots)

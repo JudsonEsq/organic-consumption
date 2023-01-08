@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         dead = true;
+        playerBody.velocity = new Vector2(0,0);
     }
 
     public void Reset()

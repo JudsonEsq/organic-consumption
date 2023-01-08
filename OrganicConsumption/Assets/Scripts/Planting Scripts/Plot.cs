@@ -98,8 +98,7 @@ public class Plot : MonoBehaviour
 
     public void Reset()
     {
-        plant.StopGrowth();
-        Destroy(plant.gameObject);
+        if(plant != null) Destroy(plant.gameObject);
         planted = false;
         numberOfButtonPress = 0;
     }

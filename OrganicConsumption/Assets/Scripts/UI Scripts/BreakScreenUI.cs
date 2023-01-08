@@ -13,16 +13,12 @@ public class BreakScreenUI : MonoBehaviour
     public float speed;
     public Ease easeType;
     public int menuYOffset = 520;
-    bool shopping = false;
+    private bool shopping = false;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T) && !shopping)
-        {
-            BreakTime();
-        }
 
-        if (Input.GetKeyDown(KeyCode.T) && shopping)
+        if (Input.GetKeyDown(KeyCode.Escape) && shopping)
         {
             StopCoroutine(ProcessUI());
             shopping = false;
@@ -32,6 +28,8 @@ public class BreakScreenUI : MonoBehaviour
     public void BreakTime()
     {
         breakMenuUI.localPosition = new Vector3(0, -menuYOffset, 0);
+        shopping = true;
+        Debug.Log("Break Thyme");
         StartCoroutine(ProcessUI());
     }
 
@@ -60,7 +58,7 @@ public class BreakScreenUI : MonoBehaviour
          */
         blackPanel.color = new Color(0, 0, 0, 0.8f);
         SlideBreakText();
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.75f);
         while(!Input.anyKeyDown)
         {
             yield return null;
@@ -68,7 +66,6 @@ public class BreakScreenUI : MonoBehaviour
         Debug.Log("Any Key Pressed");
         breakTimeImage.gameObject.SetActive(false);
         SlideBreakMenu(true);
-        shopping = true;
         yield return (new WaitForSeconds(breakDuration));
         shopping = false;
 
@@ -94,5 +91,10 @@ public class BreakScreenUI : MonoBehaviour
             breakMenuUI.DOAnchorPos(new Vector2(0, menuYOffset), 0.5f, false);
             blackPanel.DOFade(0, 1);
         }
+    }
+
+    public bool IsShopping()
+    {
+        return shopping;
     }
 }
