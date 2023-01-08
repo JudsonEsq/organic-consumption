@@ -17,14 +17,11 @@ public class Planter : MonoBehaviour
 
     [SerializeField] private GameObject plantPrefab;
 
-    private AudioSource audioSource;
-
     private float nextLoop;
 
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
 
         // The start of deliveries
         numberOfDeliveries = 1;
@@ -94,7 +91,7 @@ public class Planter : MonoBehaviour
 
         var numberOfPlantedSeeds = 0;
 
-        if(numberOfDeliveries > 1) audioSource.Play();
+        if(numberOfDeliveries > 1) FindObjectOfType<AudioManager>().Play("Siren");
 
         foreach (var plot in plots)
         {
