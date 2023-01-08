@@ -58,7 +58,9 @@ public class Planter : MonoBehaviour
         }
         else
         {
-
+            // PLACEHOLDER
+            // THIS IS WHERE BREAK TIME CODE GOES
+            numberOfDeliveries++;
         }
     }
 
@@ -87,6 +89,8 @@ public class Planter : MonoBehaviour
         ShuffleList(plots);
 
         var numberOfPlantedSeeds = 0;
+
+        if(numberOfDeliveries > 1) gameObject.GetComponent<AudioSource>().Play();
 
         foreach (var plot in plots)
         {
