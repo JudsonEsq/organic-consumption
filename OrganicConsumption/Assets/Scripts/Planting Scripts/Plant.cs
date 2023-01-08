@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class Plant : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public enum PlantState { Seed, Sprout, Ripe, Deadly}
     public PlantState plantState;
+    
 
     public void Init()
     {
@@ -82,6 +84,9 @@ public class Plant : MonoBehaviour
         }
     }
 
+
+    private Vector3 animPunch = new Vector3(1f, 0.7f, 1f);
+    private float animDuration = 0.35f;
     public void Attack()
     {
         switch(plantSO.plantVariety)
@@ -90,6 +95,7 @@ public class Plant : MonoBehaviour
                 Vector3 targetPos = player.transform.position;
                 GameObject pineapple = Instantiate(plantSO.AttackPrefab, transform.position, new Quaternion(0, 0, 0, 0));
                 pineapple.GetComponent<ProjectileBehavior>().SetTargetPos(targetPos);
+                transform.DOPunchScale(animPunch, animDuration);
                 attackCooldown = 0;
                 break;
             case PlantSO.PlantVariety.Berry:
