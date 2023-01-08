@@ -45,11 +45,11 @@ public class Planter : MonoBehaviour
 
     private void Update()
     {
-
-        if(sessionDeliveries % breakInterval == 0)
+        if(sessionDeliveries == breakInterval)
         {
             if (!onBreak)
             {
+                gameplayActive = false;
                 breakPanel.SetActive(true);
                 breakScrn.BreakTime();
                 onBreak = true;
@@ -63,7 +63,7 @@ public class Planter : MonoBehaviour
             }
         }
         // Running A planting session after a specified time
-        else if (gameplayActive)
+        if (gameplayActive)
         {
             if (Time.time > nextLoop + deliveryDelay)
             {
