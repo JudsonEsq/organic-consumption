@@ -1759,7 +1759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantingRate: 8
   plantingWaitTime: 0.5
-  deliveryDelay: 20
+  deliveryDelay: 12
   numberOfDeliveries: 1
   numberOfSeeds: 0
   plots:
@@ -1812,7 +1812,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 772536275f516e5419ec5ea6b7aa37a8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.507
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
