@@ -59,7 +59,10 @@ public class Plant : MonoBehaviour
     {
         this.plantSO = plantSO;
     }
-
+    public PlantSO GetPlantSO()
+    {
+        return plantSO;
+    }
 
     private GameObject player;
     float attackCooldown;
@@ -70,7 +73,7 @@ public class Plant : MonoBehaviour
         attackCooldown = 0;
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
         attackCooldown += Time.deltaTime;
         if (attackCooldown > plantSO.AttackCooldown && plantState == PlantState.Deadly)
@@ -85,7 +88,7 @@ public class Plant : MonoBehaviour
         {
             case PlantSO.PlantVariety.Pineapple:
                 Vector3 targetPos = player.transform.position;
-                GameObject pineapple = Instantiate<GameObject>(plantSO.AttackPrefab, transform.position, new Quaternion(0, 0, 0, 0));
+                GameObject pineapple = Instantiate(plantSO.AttackPrefab, transform.position, new Quaternion(0, 0, 0, 0));
                 pineapple.GetComponent<ProjectileBehavior>().SetTargetPos(targetPos);
                 attackCooldown = 0;
                 break;

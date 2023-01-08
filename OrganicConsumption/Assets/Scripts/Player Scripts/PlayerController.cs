@@ -30,22 +30,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        anim.SetFloat("Speed", playerBody.velocity.magnitude);
-
-        // Flip character 
-        if (horiMove > 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else
-        {
-            spriteRenderer.flipX = false;
-        }
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
         horiMove = Input.GetAxis("Horizontal") * moveSpeed;
         vertMove = Input.GetAxis("Vertical") * moveSpeed;
 
@@ -54,7 +38,22 @@ public class PlayerController : MonoBehaviour
         Mathf.Clamp(horiMove, -maxSpeed, maxSpeed);
         Mathf.Clamp(vertMove, -maxSpeed, maxSpeed);
 
+        anim.SetFloat("Speed", playerBody.velocity.magnitude);
 
+        // Flip character 
+        if (horiMove > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (horiMove < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
         if (!dead)
         {
             playerBody.velocity = new Vector2(horiMove, vertMove);

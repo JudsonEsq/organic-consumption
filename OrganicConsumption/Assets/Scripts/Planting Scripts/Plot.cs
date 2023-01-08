@@ -16,7 +16,28 @@ public class Plot : MonoBehaviour
 
         Destroy(plant.gameObject);
         planted = false;
-        
+
+        numberOfButtonPress = 0;
+    }
+
+    private int numberOfButtonPress;
+    private void DeadlyStateHarvest() 
+    {
+        switch (plant.GetPlantSO().deadlyStateInteraction)
+        {
+            default:
+            case PlantSO.HarvestInteraction.Mash:
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    numberOfButtonPress++;
+                }
+                
+                if (numberOfButtonPress >= plant.GetPlantSO().numberOfButtonPress)
+                {
+                    Harvest();
+                }
+                break;
+        }
     }
 
     private void Update()
@@ -24,11 +45,17 @@ public class Plot : MonoBehaviour
         // Testing for input in update
         if (!interact) return;
         if (plant == null) return;
-        if (plant.plantState != Plant.PlantState.Ripe) return;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (plant.plantState == Plant.PlantState.Ripe) 
         {
-            Harvest();
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Harvest();
+            }
+        }
+        else if (plant.plantState == Plant.PlantState.Deadly)
+        {
+            DeadlyStateHarvest();
         }
     }
 

@@ -8,8 +8,8 @@ public class Planter : MonoBehaviour
     [SerializeField] private float plantingRate = 2f;
     [SerializeField] private float plantingWaitTime = 1f;
     [SerializeField] private float deliveryDelay = 20f;
-    [SerializeField] private int numberOfDeliveries;
-    [SerializeField] private int numberOfSeeds;
+    private int numberOfDeliveries;
+    private int numberOfSeeds;
 
     [SerializeField] private List<Plot> plots;
     [SerializeField] private List<PlantSO> plantTypes;
@@ -17,11 +17,15 @@ public class Planter : MonoBehaviour
 
     [SerializeField] private GameObject plantPrefab;
 
+    private AudioSource audioSource;
+
     private float nextLoop;
 
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         // The start of deliveries
         numberOfDeliveries = 1;
         numberOfSeeds = 0;
@@ -90,7 +94,7 @@ public class Planter : MonoBehaviour
 
         var numberOfPlantedSeeds = 0;
 
-        if(numberOfDeliveries > 1) gameObject.GetComponent<AudioSource>().Play();
+        if(numberOfDeliveries > 1) audioSource.Play();
 
         foreach (var plot in plots)
         {

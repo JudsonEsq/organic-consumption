@@ -8,6 +8,11 @@ public class PlantSO : ScriptableObject
 {
     public enum  PlantVariety { Berry, Pineapple }
     public PlantVariety plantVariety;
+    public enum HarvestInteraction { Mash, }
+    public HarvestInteraction deadlyStateInteraction;
+    [Tooltip("This is for the mash interaction")]
+    public int numberOfButtonPress = 3;
+
     public float AttackCooldown;
     public GameObject AttackPrefab;
 
