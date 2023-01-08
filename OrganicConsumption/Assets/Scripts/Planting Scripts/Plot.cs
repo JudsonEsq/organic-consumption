@@ -11,8 +11,18 @@ public class Plot : MonoBehaviour
 
     private void Harvest()
     {
+        PlayerStats player = FindObjectOfType<PlayerStats>();
         // Whatever is supposed to happen during harvest goes here
         plant.StopGrowth();
+
+        if(plant.plantState == Plant.PlantState.Ripe)
+        {
+            player.scrip += plant.GetPlantSO().RipeReward;
+        }
+        else
+        {
+            player.scrip += plant.GetPlantSO().DeadlyReward;
+        }
 
         Destroy(plant.gameObject);
         planted = false;

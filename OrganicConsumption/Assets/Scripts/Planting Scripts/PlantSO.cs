@@ -17,6 +17,9 @@ public class PlantSO : ScriptableObject
     [Tooltip("What prefab to spawn as an attack when attacking")]
     public GameObject AttackPrefab;
 
+    public int RipeReward;
+    public int DeadlyReward;
+
     [Tooltip("Sprites to use at each stage of growth")]
     public Sprite[] plantGrowthStages = new Sprite[4];
     // This is time it takes for the plant to move from the first stage to the last
