@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Plant 3
   m_EditorClassIdentifier: 
   plantVariety: 0
+  deadlyStateInteraction: 0
+  numberOfButtonPress: 8
   AttackCooldown: 5
   AttackPrefab: {fileID: 0}
   plantGrowthStages:

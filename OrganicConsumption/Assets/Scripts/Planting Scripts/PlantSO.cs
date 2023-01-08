@@ -12,10 +12,12 @@ public class PlantSO : ScriptableObject
     public HarvestInteraction deadlyStateInteraction;
     [Tooltip("This is for the mash interaction")]
     public int numberOfButtonPress = 3;
-
+    [Tooltip("Minimum time, in seconds, between attacks")]
     public float AttackCooldown;
+    [Tooltip("What prefab to spawn as an attack when attacking")]
     public GameObject AttackPrefab;
 
+    [Tooltip("Sprites to use at each stage of growth")]
     public Sprite[] plantGrowthStages = new Sprite[4];
     // This is time it takes for the plant to move from the first stage to the last
     public float growthTime = 5f; 
