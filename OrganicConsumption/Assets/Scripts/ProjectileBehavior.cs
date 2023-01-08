@@ -11,6 +11,8 @@ public class ProjectileBehavior : MonoBehaviour
     // How far the pineapple has travelled
     private float travelled = 0;
 
+    private bool soundPlayed = false;
+
     private Vector3 tarDirec;
     
     public void SetTargetPos(Vector3 tar)
@@ -26,6 +28,11 @@ public class ProjectileBehavior : MonoBehaviour
         travelled += Time.deltaTime;
         if(travelled >= 1.8)
         {
+            if (!soundPlayed)
+            {
+                FindObjectOfType<AudioManager>().Play("Splat");
+                soundPlayed = true;
+            }
             transform.GetComponent<CircleCollider2D>().enabled = true;
         }
         if(travelled >= 2)
@@ -44,7 +51,6 @@ public class ProjectileBehavior : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("you been struck by");
             collision.gameObject.GetComponent<PlayerStats>().Damage(3);
         }
     }

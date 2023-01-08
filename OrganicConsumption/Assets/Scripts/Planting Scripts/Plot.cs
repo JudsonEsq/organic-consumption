@@ -8,6 +8,7 @@ public class Plot : MonoBehaviour
     [HideInInspector] public Plant plant;
 
     private bool interact;
+    private bool gameplayActive;
 
     private PlayerStats playerStats;
 
@@ -18,9 +19,6 @@ public class Plot : MonoBehaviour
 
     private void Harvest()
     {
-        // Whatever is supposed to happen during harvest goes here
-        plant.StopGrowth();
-
         if(plant.plantState == Plant.PlantState.Ripe)
         {
             playerStats.scrip += plant.GetPlantSO().RipeReward;
@@ -30,10 +28,7 @@ public class Plot : MonoBehaviour
             playerStats.scrip += plant.GetPlantSO().DeadlyReward;
         }
 
-        Destroy(plant.gameObject);
-        planted = false;
-
-        numberOfButtonPress = 0;
+        Reset();
     }
 
     private int numberOfButtonPress;
@@ -58,21 +53,25 @@ public class Plot : MonoBehaviour
 
     private void Update()
     {
-        // Testing for input in update
-        if (!interact) return;
-        if (plant == null) return;
-
-        if (plant.plantState == Plant.PlantState.Ripe) 
+        if (gameplayActive)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            // Testing for input in update
+            if (!interact) return;
+            if (plant == null) return;
+
+            if (plant.plantState == Plant.PlantState.Ripe)
             {
-                Harvest();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Harvest();
+                }
+            }
+            else if (plant.plantState == Plant.PlantState.Deadly)
+            {
+                DeadlyStateHarvest();
             }
         }
-        else if (plant.plantState == Plant.PlantState.Deadly)
-        {
-            DeadlyStateHarvest();
-        }
+            
     }
 
     // If the player is the plot range, make it possible to harvest. 
@@ -90,5 +89,18 @@ public class Plot : MonoBehaviour
         {
             interact = false;
         }
+    }
+
+    public void Activate()
+    {
+        gameplayActive = true;
+    }
+
+    public void Reset()
+    {
+        plant.StopGrowth();
+        Destroy(plant.gameObject);
+        planted = false;
+        numberOfButtonPress = 0;
     }
 }

@@ -16,9 +16,13 @@ MonoBehaviour:
   deadlyStateInteraction: 0
   numberOfButtonPress: 5
   AttackCooldown: 4
+  meleeAtackRadius: 5
+  meleeAttackTriggerRate: 2
   AttackPrefab: {fileID: 4136200217352980169, guid: 41583fa0c812ad549ba02f89ca4a93b1, type: 3}
+  RipeReward: 0
+  DeadlyReward: 0
   plantGrowthStages:
-  - {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
+  - {fileID: 21300000, guid: 29a36e9e04f5fcd4ba366ecc79ef5acd, type: 3}
   - {fileID: 21300000, guid: dab282445df68c5469c590121d43a8f6, type: 3}
   - {fileID: 21300000, guid: 74f40e202896ce94aa745d95fc9eeaa8, type: 3}
   - {fileID: 21300000, guid: 66ce5d84c78333c468543b89399c22d5, type: 3}

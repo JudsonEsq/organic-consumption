@@ -5,9 +5,8 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     private int health;
-    public int scrip;
-    // This should be the canvas for the game over screen
-    [SerializeField] GameObject gameOver;
+    public int scrip = 0;
+    private bool dead = false;
     [SerializeField] GameObject planter;
     PlayerController pCont;
 
@@ -15,22 +14,25 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         pCont = gameObject.GetComponent<PlayerController>();
-        Restart();
+        health = 3;
     }
 
     public void Restart()
     {
+        dead = false;
+        scrip = 0;
         health = 3;
         transform.position = new Vector2(0, 0);
         transform.GetComponent<PlayerController>().Reset();
+        planter.GetComponent<Planter>().Activate();
     }
 
     public void Damage(int amount)
     {
         health -= amount;
-        if(health <= 0)
+        if(health <= 0 && !dead)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
@@ -39,11 +41,12 @@ public class PlayerStats : MonoBehaviour
         health += amount;
     }
 
-    private void Die()
+    private IEnumerator Die()
     {
+        dead = true;
         pCont.Die();
+        planter.GetComponent<Planter>().HardReset(true);
+        yield return new WaitForSeconds(0.5f);
         UIManager.instance.OpenDeathScreen();
-        planter.SetActive(false);
-        transform.GetComponent<PlayerController>().Die();
     }
 }

@@ -19,6 +19,9 @@ public class Planter : MonoBehaviour
 
     private float nextLoop;
 
+    private Vector3 homePosition = new Vector3(-15, 12, 0);
+    private bool gameplayActive = false;
+
 
     private void Start()
     {
@@ -26,21 +29,13 @@ public class Planter : MonoBehaviour
         // The start of deliveries
         numberOfDeliveries = 1;
         numberOfSeeds = 0;
-
-        // Scale the number of seeds
-        PlantingSession();
-        // Start the planting
-        StartCoroutine(PlantSeeds());
-
-        nextLoop = Time.time;
     }
 
     private void Update()
     {
         // Running A planting session after a specified time
-        if (numberOfDeliveries % 8 != 0)
+        if (numberOfDeliveries % 8 != 0 && gameplayActive)
         {
-
             if (Time.time > nextLoop + deliveryDelay)
             {
                 StopAllCoroutines();
@@ -57,7 +52,7 @@ public class Planter : MonoBehaviour
                 nextLoop = Time.time;
             }
         }
-        else
+        else if(numberOfDeliveries > 5 && !gameplayActive)
         {
             // PLACEHOLDER
             // THIS IS WHERE BREAK TIME CODE GOES
@@ -96,7 +91,7 @@ public class Planter : MonoBehaviour
         foreach (var plot in plots)
         {
             // Stop planting after reaching the right number
-            if (numberOfPlantedSeeds == numberOfSeeds) break;
+            if (numberOfPlantedSeeds >= numberOfSeeds) break;
 
             // If the current plot already has a seed, move on to the next plot
             if (plot.planted) continue;
@@ -144,7 +139,6 @@ public class Planter : MonoBehaviour
         }
 
         // The planter goes offscreen when it is done planting, until it is needed again.
-        var homePosition = new Vector3(-15, 12, 0);
         destinationReached = false;
         while (!destinationReached)
         {
@@ -176,6 +170,42 @@ public class Planter : MonoBehaviour
             inputList[i] = inputList[randomIndex];
             inputList[randomIndex] = temp;
         }
+    }
+
+    public void Activate()
+    {
+        // Scale the number of seeds
+        PlantingSession();
+        // Start the planting
+        StartCoroutine(PlantSeeds());
+
+        foreach(Plot p in plots)
+        {
+            p.Activate();
+        }
+
+        nextLoop = Time.time;
+
+        gameplayActive = true;
+    }
+
+    // Hard is true if you are resetting the entire game. False if simply going on break (slacker)
+    public void HardReset(bool hard)
+    {
+        StopAllCoroutines();
+        transform.position = homePosition;
+        gameplayActive = false;
+        
+        foreach(Plot p in plots)
+        {
+            p.Reset();
+        }
+
+        if(hard)
+        {
+            numberOfDeliveries = 1;
+        }
+        numberOfSeeds = 0;
     }
 
 }

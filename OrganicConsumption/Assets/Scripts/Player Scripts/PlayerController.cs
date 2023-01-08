@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     // do you are not dead?
-    private bool dead = false;
+    private bool dead = true;
 
     // Start is called before the first frame update
     void Start()
