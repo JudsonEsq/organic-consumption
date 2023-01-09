@@ -10,7 +10,7 @@ public class SettingsMenu : MonoBehaviour
 
     [SerializeField] RectTransform topPanel;
     [SerializeField] RectTransform bottomPanel;
-    static int offsetPos = 1210;
+    static int offsetPos = 1650;
 
     [SerializeField] RectTransform settingsSliders;
 

@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
 
     public void setMaster(float amount)
     {
-        if (amount < -29)
+        if (amount <= -49)
         {
             masterMixer.SetFloat("volume", -100f);
             return;
@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
 
     public void setSFX(float amount)
     {
-        if(amount <= -29f)
+        if(amount <= -49f)
         {
             masterMixer.SetFloat("sfxVolume", -100f);
             return;
@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
 
     public void setMusic(float amount)
     {
-        if (amount < -29)
+        if (amount <= -49)
         {
             masterMixer.SetFloat("musicVolume", -100f);
             return;

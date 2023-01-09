@@ -12,7 +12,7 @@ public class BreakScreenUI : MonoBehaviour
 
     public float speed;
     public Ease easeType;
-    public int menuYOffset = 520;
+    public int menuYOffset = 1040;
     private bool shopping = false;
 
     private void Update()

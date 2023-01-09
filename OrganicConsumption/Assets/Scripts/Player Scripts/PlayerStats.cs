@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
         Heal(10);
         transform.position = new Vector2(0, 0);
         transform.GetComponent<PlayerController>().Reset();
+        planter.GetComponent<Planter>().HardReset(false);
         planter.GetComponent<Planter>().Activate();
     }
 
