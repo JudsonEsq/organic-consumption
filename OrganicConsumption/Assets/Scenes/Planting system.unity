@@ -2364,7 +2364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573449899007928927, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 573449899007928927, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2372,7 +2372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573449899007928927, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 750636976094180265, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_Layer
@@ -2380,7 +2380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1888977377355606087, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_text
-      value: Happiness
+      value: ' Happiness'
       objectReference: {fileID: 0}
     - target: {fileID: 2046780891982829121, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: hoverColor.g
@@ -2392,11 +2392,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180002518310918072, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -97.999985
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2180002518310918072, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 48.999992
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302161643965015309, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2302161643965015309, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2457,6 +2461,10 @@ PrefabInstance:
     - target: {fileID: 2302161643965015309, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622814738565999309, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2622814738565999309, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2530,6 +2538,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3582283431431673402, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_text
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834008642247966645, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_text
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 4886318399498240493, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: hoverColor.a
       value: 1
@@ -2557,6 +2573,10 @@ PrefabInstance:
     - target: {fileID: 5630817465940575723, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111702829562013747, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6111702829562013747, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2625,6 +2645,10 @@ PrefabInstance:
     - target: {fileID: 6453452243415478752, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018981481878896685, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_text
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8449523769547012533, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: hoverColor.g
