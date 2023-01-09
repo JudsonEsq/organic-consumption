@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     // Multiplier that affects how fast the player can move
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float maxSpeed = 10f;
+
+    private float startMovSpeed;
+    private float startMaxSpeed;
     Rigidbody2D playerBody;
 
     private Animator anim;
@@ -22,6 +25,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startMovSpeed = moveSpeed;
+        startMaxSpeed = maxSpeed;
         playerBody = transform.GetComponent<Rigidbody2D>();
 
         anim = GetComponentInChildren<Animator>();
@@ -66,10 +71,24 @@ public class PlayerController : MonoBehaviour
         playerBody.velocity = new Vector2(0,0);
     }
 
+    public void changeSpeed(float newVal)
+    {
+        moveSpeed = newVal;
+        maxSpeed = newVal;
+    }
+
+    public void changeSpeed(float newVal, float accel)
+    {
+        moveSpeed = accel;
+        maxSpeed = newVal;
+    }
+
     public void Reset()
     {
         transform.position = new Vector3(0, 0, 0);
         dead = false;
+        moveSpeed = startMovSpeed;
+        maxSpeed = startMaxSpeed;
         horiMove = 0f;
         vertMove = 0f;
     }

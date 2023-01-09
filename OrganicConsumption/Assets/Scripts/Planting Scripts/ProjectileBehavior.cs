@@ -13,6 +13,8 @@ public class ProjectileBehavior : MonoBehaviour
 
     private bool soundPlayed = false;
 
+    private BreakScreenUI breaktime;
+
     private Vector3 tarDirec;
     
     public void SetTargetPos(Vector3 tar)
@@ -20,6 +22,11 @@ public class ProjectileBehavior : MonoBehaviour
         targetPos = tar;
         tarDirec = targetPos - transform.position;
         distance = tarDirec.magnitude;
+    }
+
+    public void Start()
+    {
+        breaktime = FindObjectOfType<BreakScreenUI>();
     }
 
     // Update is called once per frame
@@ -49,7 +56,7 @@ public class ProjectileBehavior : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !breaktime.IsShopping())
         {
             collision.gameObject.GetComponent<PlayerStats>().Damage(1);
         }
