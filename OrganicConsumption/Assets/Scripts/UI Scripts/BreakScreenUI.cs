@@ -29,7 +29,6 @@ public class BreakScreenUI : MonoBehaviour
     {
         breakMenuUI.localPosition = new Vector3(0, -menuYOffset, 0);
         shopping = true;
-        Debug.Log("Break Thyme");
         StartCoroutine(ProcessUI());
     }
 

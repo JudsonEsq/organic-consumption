@@ -28,6 +28,7 @@ public class Planter : MonoBehaviour
     private bool gameplayActive = false;
 
     [SerializeField] private GameObject breakPanel;
+    private AudioManager audioMan;
     private BreakScreenUI breakScrn;
 
 
@@ -40,6 +41,7 @@ public class Planter : MonoBehaviour
         numberOfSeeds = 0;
         onBreak = false;
         breakScrn = breakPanel.GetComponent<BreakScreenUI>();
+        audioMan = FindObjectOfType<AudioManager>();
         Debug.Log(breakScrn == null);
     }
 
@@ -51,6 +53,9 @@ public class Planter : MonoBehaviour
             {
                 gameplayActive = false;
                 breakPanel.SetActive(true);
+                audioMan.StopAll();
+                audioMan.Play("Menu");
+                audioMan.Play("Whistle");
                 breakScrn.BreakTime();
                 onBreak = true;
                 HardReset(false);
@@ -58,6 +63,8 @@ public class Planter : MonoBehaviour
             else if (!breakScrn.IsShopping())
             {
                 onBreak = false;
+                audioMan.StopAll();
+                audioMan.Play("Game");
                 gameplayActive = true;
                 sessionDeliveries = 0;
             }
@@ -145,6 +152,7 @@ public class Planter : MonoBehaviour
             yield return new WaitForSeconds(plantingWaitTime);
 
             // Instantiate and plant the seed in the right location
+            FindObjectOfType<AudioManager>().Play("Dig");
             var plantGO = Instantiate(plantPrefab, plotPosition, Quaternion.identity, plantParent.transform);
             var plant = plantGO.GetComponent<Plant>();
 

@@ -106,6 +106,7 @@ public class Plant : MonoBehaviour
                 GameObject pineapple = Instantiate(plantSO.AttackPrefab, transform.position, new Quaternion(0, 0, 0, 0));
                 pineapple.GetComponent<ProjectileBehavior>().SetTargetPos(targetPos);
                 transform.DOPunchScale(animPunch, animDuration);
+                StartCoroutine(animateAttack(animDuration));
                 attackCooldown = 0;
                 break;
             case PlantSO.PlantVariety.Berry:
@@ -133,6 +134,9 @@ public class Plant : MonoBehaviour
                     {
                         // Damage player
                         playerStats.Damage(1);
+                        transform.DOPunchScale(animPunch, animDuration);
+                        StartCoroutine(animateAttack(animDuration));
+                        FindObjectOfType<AudioManager>().Play("Thwack");
                     }
                    
                     meleeAttackTriggerCounter = 0;
@@ -147,6 +151,18 @@ public class Plant : MonoBehaviour
                 break;
         }
 
+    }
+
+    private IEnumerator animateAttack(float dur)
+    {
+        spriteRenderer.sprite = plantSO.attackSprite;
+        if(transform.position.x > player.transform.position.x)
+        {
+            spriteRenderer.flipX = true;
+        }
+        yield return new WaitForSeconds(dur * 2);
+        spriteRenderer.flipX = false;
+        spriteRenderer.sprite = plantSO.plantGrowthStages[3];
     }
 
     public void ColorIndication()

@@ -51,7 +51,7 @@ public class ProjectileBehavior : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerStats>().Damage(3);
+            collision.gameObject.GetComponent<PlayerStats>().Damage(1);
         }
     }
 }

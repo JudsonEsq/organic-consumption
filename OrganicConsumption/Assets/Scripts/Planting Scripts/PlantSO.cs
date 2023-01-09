@@ -26,6 +26,8 @@ public class PlantSO : ScriptableObject
 
     [Tooltip("Sprites to use at each stage of growth")]
     public Sprite[] plantGrowthStages = new Sprite[4];
+    [Tooltip("Sprite to be used for the attacking frame")]
+    public Sprite attackSprite;
     [Tooltip("This is time it takes for the plant to move from the first stage to the last")]
     public float growthTime = 5f; 
 }
