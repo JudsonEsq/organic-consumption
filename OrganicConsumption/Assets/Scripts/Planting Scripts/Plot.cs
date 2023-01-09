@@ -10,12 +10,15 @@ public class Plot : MonoBehaviour
 
     private bool interact;
     private bool gameplayActive;
+    private MashPrompt masher;
 
     private PlayerStats playerStats;
 
     private void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
+        masher = gameObject.GetComponentInChildren<MashPrompt>();
+        masher.Deactivate();
     }
 
     private void Harvest()
@@ -84,6 +87,7 @@ public class Plot : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
+            if(plant != null && (plant.plantState == Plant.PlantState.Deadly || plant.plantState == Plant.PlantState.Ripe)) masher.Activate(plant.plantState);
             interact = true;
         }
     }
@@ -92,6 +96,7 @@ public class Plot : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
+            masher.Deactivate();
             interact = false;
         }
     }
