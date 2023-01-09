@@ -126,6 +126,11 @@ public class UIManager : MonoBehaviour
         terminationScreenUI.GetChild(1).DOMoveY(0, 1, true).SetEase(terminationCurve);
     }
 
+    public void CloseDeathScreen()
+    {
+        terminationScreenUI.gameObject.SetActive(false);
+    }
+
     public void CloseModals()
     {
         if (settingsOpen)

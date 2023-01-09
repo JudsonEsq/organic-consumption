@@ -20,6 +20,7 @@ public class Planter : MonoBehaviour
     [SerializeField] private List<PlantSO> plantTypes;
     [SerializeField] private GameObject plantParent;
 
+    [SerializeField] private UnityEngine.UI.Slider breakBar;
     [SerializeField] private GameObject plantPrefab;
 
     private float nextLoop;
@@ -47,24 +48,34 @@ public class Planter : MonoBehaviour
 
     private void Update()
     {
+        breakBar.value += Time.deltaTime / (breakInterval * deliveryDelay);
         if(sessionDeliveries == breakInterval)
         {
             if (!onBreak)
             {
                 gameplayActive = false;
                 breakPanel.SetActive(true);
+
                 audioMan.StopAll();
                 audioMan.Play("Menu");
                 audioMan.Play("Whistle");
+
                 breakScrn.BreakTime();
                 onBreak = true;
                 HardReset(false);
             }
             else if (!breakScrn.IsShopping())
             {
+                // Reset the break meter's progress
+                breakBar.value = 0;
                 onBreak = false;
+                
+                // Transition back to game audio
                 audioMan.StopAll();
                 audioMan.Play("Game");
+                
+                // Breaks get farther apart with each break (inflation ): )
+                breakInterval++;
                 gameplayActive = true;
                 sessionDeliveries = 0;
             }
@@ -238,7 +249,9 @@ public class Planter : MonoBehaviour
         {
             numberOfDeliveries = 1;
         }
+        sessionDeliveries = 0;
         numberOfSeeds = 0;
+        breakBar.value = 0;
     }
 
 }

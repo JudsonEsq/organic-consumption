@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Plot : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class Plot : MonoBehaviour
             playerStats.scrip += plant.GetPlantSO().DeadlyReward;
             FindObjectOfType<AudioManager>().Play("Dig");
         }
+
+        plant.GetComponent<SpriteRenderer>().DOKill();
 
         Reset();
     }

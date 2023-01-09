@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
     private bool dead = false;
     [SerializeField] GameObject planter;
     [SerializeField] TMPro.TMP_Text scripCounter;
+    [SerializeField] HPVisuals hpVis;
     PlayerController pCont;
 
     // Start is called before the first frame update
@@ -28,7 +29,7 @@ public class PlayerStats : MonoBehaviour
     {
         dead = false;
         scrip = 0;
-        health = 3;
+        Heal(10);
         transform.position = new Vector2(0, 0);
         transform.GetComponent<PlayerController>().Reset();
         planter.GetComponent<Planter>().Activate();
@@ -37,7 +38,8 @@ public class PlayerStats : MonoBehaviour
     public void Damage(int amount)
     {
         health -= amount;
-        if(health <= 0 && !dead)
+        hpVis.UpdateHealthVisual(health);
+        if (health <= 0 && !dead)
         {
             StartCoroutine(Die());
         }
@@ -46,6 +48,8 @@ public class PlayerStats : MonoBehaviour
     public void Heal(int amount)
     {
         health += amount;
+        if (health > 3) health = 3;
+        hpVis.UpdateHealthVisual(health);
     }
 
     private IEnumerator Die()

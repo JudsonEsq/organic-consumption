@@ -29,7 +29,7 @@ public class HPVisuals : MonoBehaviour
             case 1:
                 graphic.sprite = HP1;
                 break;
-            case 0:
+            default:
                 graphic.sprite = HP0;
                 break;
         }
