@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     private float sfxVol;
     private float musicVol;
 
-    public AudioMixer audioMixer;
+    public AudioMixer masterMixer;
 
     // Start is called before the first frame update
     void Awake()
@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
-            s.source.outputAudioMixerGroup = audioMixer.outputAudioMixerGroup;
+            s.source.outputAudioMixerGroup = s.Mixer;
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
@@ -34,17 +34,33 @@ public class AudioManager : MonoBehaviour
 
     public void setMaster(float amount)
     {
-        audioMixer.SetFloat("volume", amount);
+        if (amount < -29)
+        {
+            masterMixer.SetFloat("volume", -100f);
+            return;
+        }
+        masterMixer.SetFloat("volume", amount);
     }
 
-    public void setSfx(float amount)
+    public void setSFX(float amount)
     {
-        sfxVol = Mathf.Clamp(amount, 0f, 1f);
+        if(amount <= -29f)
+        {
+            masterMixer.SetFloat("sfxVolume", -100f);
+            return;
+        }
+
+        masterMixer.SetFloat("sfxVolume", amount);
     }
 
     public void setMusic(float amount)
     {
-        musicVol = Mathf.Clamp(amount, 0f, 1f);
+        if (amount < -29)
+        {
+            masterMixer.SetFloat("musicVolume", -100f);
+            return;
+        }
+        masterMixer.SetFloat("musicVolume", amount);
     }
 
     public void Play(string name)
@@ -54,7 +70,6 @@ public class AudioManager : MonoBehaviour
         {
             return;
         }
-        s.source.outputAudioMixerGroup = audioMixer.outputAudioMixerGroup;
         s.source.Play();
     }
 
