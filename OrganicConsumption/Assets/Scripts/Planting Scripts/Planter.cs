@@ -25,7 +25,7 @@ public class Planter : MonoBehaviour
 
     private float nextLoop;
 
-    private Vector3 homePosition = new Vector3(-15, 12, 0);
+    private Vector3 homePosition;
     private bool gameplayActive = false;
 
     [SerializeField] private GameObject breakPanel;
@@ -35,7 +35,7 @@ public class Planter : MonoBehaviour
 
     private void Start()
     {
-
+        homePosition = transform.position;
         // The start of deliveries
         numberOfDeliveries = 1;
         sessionDeliveries = 0;
@@ -123,7 +123,7 @@ public class Planter : MonoBehaviour
         if (plantTypes == null || plantTypes.Count == 0) yield break;
         if (plantPrefab == null) yield break;
 
-        bool destinationReached = false;
+        bool destinationReached;
 
         // Shuffle the list before a planting session
         ShuffleList(plots);
@@ -218,6 +218,7 @@ public class Planter : MonoBehaviour
 
     public void Activate()
     {
+        StopAllCoroutines();
         // Scale the number of seeds
         PlantingSession();
         // Start the planting
