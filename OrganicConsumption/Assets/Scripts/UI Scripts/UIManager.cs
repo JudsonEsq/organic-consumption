@@ -21,7 +21,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] AudioManager audManager;
 
     public bool isPlaying = true;
-    bool isPaused = false;
 
     private void Start()
     {

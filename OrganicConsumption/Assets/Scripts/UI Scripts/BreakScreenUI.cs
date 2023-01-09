@@ -67,7 +67,6 @@ public class BreakScreenUI : MonoBehaviour
         SlideBreakMenu(true);
         yield return (new WaitForSeconds(breakDuration));
         SlideBreakMenu(false);
-        shopping = false;
 
     }
     
@@ -90,6 +89,7 @@ public class BreakScreenUI : MonoBehaviour
         {
             breakMenuUI.DOAnchorPos(new Vector2(0, menuYOffset), 0.5f, false);
             blackPanel.DOFade(0, 1);
+            shopping = false;
         }
     }
 

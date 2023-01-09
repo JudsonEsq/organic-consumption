@@ -51,6 +51,7 @@ public class Planter : MonoBehaviour
         breakBar.value += Time.deltaTime / (breakInterval * deliveryDelay);
         if(sessionDeliveries == breakInterval)
         {
+            StopAllCoroutines();
             if (!onBreak)
             {
                 gameplayActive = false;
@@ -78,6 +79,7 @@ public class Planter : MonoBehaviour
                 breakInterval++;
                 gameplayActive = true;
                 sessionDeliveries = 0;
+                breakPanel.SetActive(false);
             }
         }
         // Running A planting session after a specified time
@@ -101,6 +103,7 @@ public class Planter : MonoBehaviour
                 nextLoop = Time.time;
             }
         }
+
         
     }
 
@@ -249,8 +252,8 @@ public class Planter : MonoBehaviour
         if(hard)
         {
             numberOfDeliveries = 1;
+            sessionDeliveries = 0;
         }
-        sessionDeliveries = 0;
         numberOfSeeds = 0;
         breakBar.value = 0;
     }
