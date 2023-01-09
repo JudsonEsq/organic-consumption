@@ -1990,7 +1990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434567765837200928, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 434567765837200932, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_LocalScale.x
@@ -2134,7 +2134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434567766029761100, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 434567766029761102, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: menuYOffset
@@ -2324,7 +2324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434567767274581112, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 434567767334942116, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2389,6 +2389,14 @@ PrefabInstance:
     - target: {fileID: 1888977377355606087, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_text
       value: ' Happiness'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938446922591946870, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.180176
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938446922591946870, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.65319824
       objectReference: {fileID: 0}
     - target: {fileID: 2046780891982829121, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: hoverColor.g
@@ -2550,6 +2558,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3266110482078519607, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266110482078519607, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266110482078519607, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266110482078519607, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3582283431431673402, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_text
       value: 150
@@ -2660,15 +2684,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6315880379092780543, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_text
-      value: Quickening Meal
+      value: ' Quick Meal'
       objectReference: {fileID: 0}
     - target: {fileID: 6453452243415478752, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.043
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6453452243415478752, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7018981481878896685, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_text
