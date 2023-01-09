@@ -18,10 +18,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] SettingsMenu settingsUI;
     [SerializeField] RectTransform creditsUI;
 
+    [SerializeField] AudioManager audManager;
+
     public bool isPlaying = true;
     bool isPaused = false;
 
-    private void Awake()
+    private void Start()
     {
         if (instance != null) Debug.LogWarning("Attempting to create multiple instances of UI Manager.");
         else instance = this;
@@ -31,9 +33,9 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) TogglePauseScreen();
+        if (Input.GetKeyDown(KeyCode.P)) TogglePauseScreen();
         if (Input.GetKeyDown(KeyCode.B)) EnableBreakScreen(); // for testing
-        if (Input.GetKeyDown(KeyCode.P)) OpenDeathScreen();
+        //if (Input.GetKeyDown(KeyCode.P)) OpenDeathScreen();
         if (Input.GetKeyDown(KeyCode.Escape)) CloseModals();
     }
     
@@ -49,8 +51,13 @@ public class UIManager : MonoBehaviour
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
-        Debug.Log(startButton);
-        if (targetMenu == startScreenUI) EventSystem.current.SetSelectedGameObject(startButton);
+
+        if (targetMenu == startScreenUI)
+        {
+            EventSystem.current.SetSelectedGameObject(startButton);
+            audManager.Play("Menu");
+        }
+
         isPlaying = (targetMenu == hudScreenUI)? true : false;
         targetMenu.gameObject.SetActive(true);
     }

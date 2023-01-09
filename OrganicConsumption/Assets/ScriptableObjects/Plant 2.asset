@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantVariety: 0
   deadlyStateInteraction: 0
-  numberOfButtonPress: 8
+  numberOfButtonPress: 7
   AttackCooldown: 5
   meleeAtackRadius: 5
-  meleeAttackTriggerRate: 25
+  meleeAttackTriggerRate: 33
   AttackPrefab: {fileID: 0}
-  RipeReward: 0
-  DeadlyReward: 0
+  RipeReward: 5
+  DeadlyReward: 4
   plantGrowthStages:
   - {fileID: 21300000, guid: 29a36e9e04f5fcd4ba366ecc79ef5acd, type: 3}
   - {fileID: 21300000, guid: 19c8b5d1e0be70c40b71101378c2c128, type: 3}
   - {fileID: 21300000, guid: 479c828fb3b9a0544a40ba9cb83dcc33, type: 3}
   - {fileID: 21300000, guid: 296a69dab0520bc48bc68ddd4a535bb6, type: 3}
-  growthTime: 7
+  attackSprite: {fileID: 21300000, guid: 3f4d5e415523595448e2a55e411db1b9, type: 3}
+  growthTime: 5

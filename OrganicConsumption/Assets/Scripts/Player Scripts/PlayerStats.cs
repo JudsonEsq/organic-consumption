@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerStats : MonoBehaviour
     public int scrip = 0;
     private bool dead = false;
     [SerializeField] GameObject planter;
+    [SerializeField] TMPro.TMP_Text scripCounter;
     PlayerController pCont;
 
     // Start is called before the first frame update
@@ -15,6 +17,11 @@ public class PlayerStats : MonoBehaviour
     {
         pCont = gameObject.GetComponent<PlayerController>();
         health = 3;
+    }
+
+    private void Update()
+    {
+        scripCounter.text = scrip.ToString();
     }
 
     public void Restart()

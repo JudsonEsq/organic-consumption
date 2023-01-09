@@ -22,10 +22,12 @@ public class Plot : MonoBehaviour
         if(plant.plantState == Plant.PlantState.Ripe)
         {
             playerStats.scrip += plant.GetPlantSO().RipeReward;
+            FindObjectOfType<AudioManager>().Play("Dig");
         }
         else
         {
             playerStats.scrip += plant.GetPlantSO().DeadlyReward;
+            FindObjectOfType<AudioManager>().Play("Dig");
         }
 
         Reset();
