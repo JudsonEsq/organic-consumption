@@ -2552,7 +2552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3582283431431673402, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_text
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3834008642247966645, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_text
@@ -2640,7 +2640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6111702829562013747, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6111702829562013747, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
