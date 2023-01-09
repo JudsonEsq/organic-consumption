@@ -7,13 +7,14 @@ public class MiniGameVisuals : MonoBehaviour
 
     private void Awake()
     { 
-        bar = transform.GetChild(0).GetComponent<Slider>();   
+        bar = transform.GetChild(0).GetComponent<Slider>();
     }
 
     public void OpenMinigame(Vector3 position)
     {
         // Resets, moves Minigame to space on screen and enables graphics.
-        bar.GetComponent<RectTransform>().position = position;
+        var screenPosition = Camera.main.WorldToScreenPoint(position);
+        bar.transform.position = screenPosition;
         bar.gameObject.SetActive(true);
     }
 

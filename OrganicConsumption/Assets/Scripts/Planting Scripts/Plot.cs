@@ -43,7 +43,7 @@ public class Plot : MonoBehaviour
     }
 
     private int numberOfButtonPress;
-    private Vector3 barOffset = new Vector3(30, 0, 0);
+    private Vector3 barOffset = new Vector3(0, 4, 0);
     private void DeadlyStateHarvest() 
     {
         switch (plant.GetPlantSO().deadlyStateInteraction)
@@ -61,7 +61,7 @@ public class Plot : MonoBehaviour
                 }
                 break;
             case PlantSO.HarvestInteraction.Hold:
-                minigame.OpenMinigame(plant.transform.position + barOffset);
+                minigame.OpenMinigame(transform.position + barOffset);
                 masher.Deactivate();
                 if(Input.GetKey(KeyCode.E))
                 {
