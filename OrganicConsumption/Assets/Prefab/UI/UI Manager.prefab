@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' NOAS Soylent'
+  m_text: Standard Meal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20f1d6bbe8a6f8a46866ef6864f70e08, type: 2}
   m_sharedMaterial: {fileID: 3246050803319946880, guid: 20f1d6bbe8a6f8a46866ef6864f70e08, type: 2}
@@ -1223,7 +1223,7 @@ RectTransform:
   m_GameObject: {fileID: 434567765584663315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 434567766626782119}
@@ -2490,7 +2490,7 @@ RectTransform:
   m_GameObject: {fileID: 434567765837200928}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 434567766012802560}
@@ -6434,7 +6434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &434567766939172904
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8314,7 +8314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' NOAS Soylent'
+  m_text: Hapiness
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20f1d6bbe8a6f8a46866ef6864f70e08, type: 2}
   m_sharedMaterial: {fileID: 3246050803319946880, guid: 20f1d6bbe8a6f8a46866ef6864f70e08, type: 2}
@@ -8817,7 +8817,7 @@ GameObject:
   - component: {fileID: 2502661219330735069}
   - component: {fileID: 2847506684248944808}
   m_Layer: 5
-  m_Name: Item Text
+  m_Name: Item Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8880,8 +8880,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278225119
+  m_fontColor: {r: 0.8745099, g: 0.53333336, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9082,7 +9082,7 @@ MonoBehaviour:
   itemImage: {fileID: 8536043783191515186}
   mealDescription: Meal 2 Description
   mealSprite: {fileID: 21300000, guid: 8b586eae310becf428d7ac6bb13ddd95, type: 3}
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  hoverColor: {r: 0.8745099, g: 0.53333336, b: 0, a: 1}
 --- !u!1 &5446983758058631851
 GameObject:
   m_ObjectHideFlags: 0
@@ -9186,7 +9186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9194,7 +9194,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9263,7 +9263,7 @@ MonoBehaviour:
   itemImage: {fileID: 8536043783191515186}
   mealDescription: Meal 1 Description
   mealSprite: {fileID: 21300000, guid: d9534b625ece6ac469c89b1a530b3565, type: 3}
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  hoverColor: {r: 0.8745099, g: 0.53333336, b: 0, a: 1}
 --- !u!1 &5624696197320333816
 GameObject:
   m_ObjectHideFlags: 0
@@ -9406,7 +9406,7 @@ MonoBehaviour:
   itemImage: {fileID: 8536043783191515186}
   mealDescription: A popular item among other economic systems!
   mealSprite: {fileID: 21300000, guid: 5d26ec7be300ce74cb650a3d7c60a636, type: 3}
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  hoverColor: {r: 0.8745099, g: 0.53333336, b: 0, a: 1}
 --- !u!1 &5630817465940575723
 GameObject:
   m_ObjectHideFlags: 0

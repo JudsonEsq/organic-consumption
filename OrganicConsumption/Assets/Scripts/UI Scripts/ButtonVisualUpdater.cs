@@ -17,33 +17,34 @@ public class ButtonVisualUpdater : MonoBehaviour, IPointerEnterHandler, IPointer
     TextMeshProUGUI cost;
     Image scripIcon;
     Image background;
-    [SerializeField] Color hoverColor;
+    [SerializeField] Color hoverColor = new Color(0, 0, 0, 1);
 
 
-    private void Awake()
+    private void Start()
     {
-        background = transform.GetChild(0).GetComponent<Image>();
-        mealName = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        scripIcon = transform.GetChild(2).GetComponent<Image>();
-        cost = transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+        background = this.transform.GetChild(0).GetComponent<Image>();
+        mealName = this.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        scripIcon = this.transform.GetChild(2).GetComponent<Image>();
+        cost = this.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        this.background.color = hoverColor;
+        this.mealName.color = Color.black;
+        this.cost.color = Color.black;
+        this.scripIcon.color = Color.black;
 
         itemImage.sprite = mealSprite;
         textDesc.text = mealDescription;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        background.color = hoverColor;
-        mealName.color = Color.black;
-        cost.color = Color.black;
-        scripIcon.color = Color.black;
-    }
-
     public void OnPointerExit(PointerEventData eventData)
     {
-        background.color = Color.black;
-        mealName.color = Color.white;
-        cost.color = Color.white;
-        scripIcon.color = Color.white;
+        this.background.color = Color.black;
+        this.mealName.color = Color.white;
+        this.cost.color = Color.white;
+        this.scripIcon.color = Color.white;
     }
 }
