@@ -32,7 +32,6 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B)) EnableBreakScreen(); // for testing
         //if (Input.GetKeyDown(KeyCode.P)) OpenDeathScreen();
         if (Input.GetKeyDown(KeyCode.Escape)) CloseModals();
     }

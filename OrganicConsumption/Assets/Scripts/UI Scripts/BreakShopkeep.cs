@@ -23,7 +23,7 @@ public class BreakShopkeep : MonoBehaviour
     {
         if(stats.scrip >= price)
         {
-            controller.changeSpeed(15, 21);
+            controller.changeSpeed(12.5f, 15f);
             stats.scrip -= price;
         }
         
