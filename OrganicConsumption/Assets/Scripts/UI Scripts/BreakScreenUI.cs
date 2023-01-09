@@ -77,7 +77,7 @@ public class BreakScreenUI : MonoBehaviour
         breakTimeImage.DOAnchorPos(Vector2.zero, speed, false).SetEase(Ease.OutElastic, 1);
     }
 
-    private void SlideBreakMenu(bool arriving)
+    public void SlideBreakMenu(bool arriving)
     {
         if (arriving)
         {
@@ -90,6 +90,7 @@ public class BreakScreenUI : MonoBehaviour
             breakMenuUI.DOAnchorPos(new Vector2(0, menuYOffset), 0.5f, false);
             blackPanel.DOFade(0, 1);
             shopping = false;
+            StopAllCoroutines();
         }
     }
 

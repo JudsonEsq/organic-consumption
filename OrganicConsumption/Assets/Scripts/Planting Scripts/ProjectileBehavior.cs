@@ -13,7 +13,7 @@ public class ProjectileBehavior : MonoBehaviour
 
     private bool soundPlayed = false;
 
-    private BreakScreenUI breaktime;
+    public BreakScreenUI breaktime;
 
     private Vector3 tarDirec;
     
@@ -22,11 +22,6 @@ public class ProjectileBehavior : MonoBehaviour
         targetPos = tar;
         tarDirec = targetPos - transform.position;
         distance = tarDirec.magnitude;
-    }
-
-    public void Start()
-    {
-        breaktime = FindObjectOfType<BreakScreenUI>();
     }
 
     // Update is called once per frame

@@ -170,6 +170,8 @@ public class Planter : MonoBehaviour
             var plantGO = Instantiate(plantPrefab, plotPosition, Quaternion.identity, plantParent.transform);
             var plant = plantGO.GetComponent<Plant>();
 
+            plant.breaktime = breakScrn;
+
             // Set the plant on the plot
             plot.plant = plant;
 

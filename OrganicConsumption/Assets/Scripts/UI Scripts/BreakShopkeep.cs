@@ -10,20 +10,20 @@ public class BreakShopkeep : MonoBehaviour
     [SerializeField] GameObject gameplayElements;
     [SerializeField] GameObject winScreen;
 
-    public void PurchaseHeal(int amount, int price)
+    public void PurchaseHeal(int price)
     {
         if(stats.scrip >= price)
         {
-            stats.Heal(amount);
+            stats.Heal(1);
             stats.scrip -= price;
         }
     }
 
-    public void PurchaseSpeed(float value, int price)
+    public void PurchaseSpeed(int price)
     {
         if(stats.scrip >= price)
         {
-            controller.changeSpeed(value, 1.5f * value);
+            controller.changeSpeed(15, 21);
             stats.scrip -= price;
         }
         
@@ -37,6 +37,7 @@ public class BreakShopkeep : MonoBehaviour
             winScreen.SetActive(true);
             AudioManager audMan = FindObjectOfType<AudioManager>();
             audMan.StopAll();
+            audMan.Play("Yahoo");
             audMan.Play("Menu");
         }
     }

@@ -7,6 +7,7 @@ public class Plant : MonoBehaviour
 {
     private PlantSO plantSO;
     private SpriteRenderer spriteRenderer;
+    public BreakScreenUI breaktime;
     public enum PlantState { Seed, Sprout, Ripe, Deadly}
     public PlantState plantState;
 
@@ -104,7 +105,11 @@ public class Plant : MonoBehaviour
             case PlantSO.PlantVariety.Pineapple:
                 Vector3 targetPos = player.transform.position;
                 GameObject pineapple = Instantiate(plantSO.AttackPrefab, transform.position, new Quaternion(0, 0, 0, 0));
-                pineapple.GetComponent<ProjectileBehavior>().SetTargetPos(targetPos);
+
+                ProjectileBehavior pinenade = pineapple.GetComponent<ProjectileBehavior>();
+                pinenade.SetTargetPos(targetPos);
+                pinenade.breaktime = breaktime;
+
                 transform.DOPunchScale(animPunch, animDuration);
                 StartCoroutine(animateAttack(animDuration));
                 attackCooldown = 0;
