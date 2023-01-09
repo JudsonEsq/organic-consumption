@@ -9,17 +9,11 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
-    private VolumeSettingsSO audioSO;
-    private float masterVol;
-    private float sfxVol;
-    private float musicVol;
-
     public AudioMixer masterMixer;
 
     // Start is called before the first frame update
     void Awake()
     {
-        audioSO = Resources.Load<VolumeSettingsSO>("SO/Volume Settings");
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();

@@ -171,7 +171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434567765368336289, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 434567765368336289, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_MaxValue
@@ -183,12 +183,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434567765368336289, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434567765368336289, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 434567765368336289, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 434567765368336289, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1955689898}
     - target: {fileID: 434567765368336289, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -198,8 +206,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 434567765368336289, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: setMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 434567765368336289, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: setMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 434567765368336289, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 434567765368336289, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -627,7 +643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434567767270381567, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 434567767270381567, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_MaxValue
@@ -659,7 +675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434567767334942116, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 434567767334942116, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_MaxValue
@@ -821,7 +837,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 434567766699101636, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
 --- !u!114 &45790636 stripped
 MonoBehaviour:
