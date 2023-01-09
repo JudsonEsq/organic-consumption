@@ -18,8 +18,7 @@ public class AudioSlidersUI : MonoBehaviour
         musicSlider.value = volumeSettings.musicVolume;
     }
 
-    public void VolumeChanged()
-    {
-         volumeSettings.UpdateVolumes(masterSlider.value, sfxSlider.value, musicSlider.value);
-    }
+    public void ChangeMasterVolume() => volumeSettings.ChangeMasterVolume(masterSlider.value);
+    public void ChangeSfxVolume() => volumeSettings.ChangeSFXVolume(sfxSlider.value);
+    public void ChangeMusicVolume() => volumeSettings.ChangeMusicVolume(musicSlider.value);
 }
