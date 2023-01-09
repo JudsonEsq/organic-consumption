@@ -8,7 +8,7 @@ public class PlantSO : ScriptableObject
 {
     public enum  PlantVariety { Berry, Pineapple }
     public PlantVariety plantVariety;
-    public enum HarvestInteraction { Mash, }
+    public enum HarvestInteraction { Mash, Hold}
     public HarvestInteraction deadlyStateInteraction;
     [Tooltip("This is for the mash interaction")]
     public int numberOfButtonPress = 3;

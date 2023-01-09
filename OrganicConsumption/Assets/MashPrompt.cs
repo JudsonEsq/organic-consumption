@@ -25,9 +25,9 @@ public class MashPrompt : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void Activate(Plant.PlantState state)
+    public void Activate(Plant.PlantState state, PlantSO.HarvestInteraction interaction)
     {
-        if(state == Plant.PlantState.Deadly)
+        if(state == Plant.PlantState.Deadly && interaction == PlantSO.HarvestInteraction.Mash)
         {
             mash = true;
         }

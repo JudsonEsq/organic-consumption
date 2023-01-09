@@ -356,7 +356,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 434567766699101636}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSlidersUI, Assembly-CSharp
         m_MethodName: ChangeMasterVolume
         m_Mode: 1
@@ -5227,7 +5227,6 @@ GameObject:
   m_Component:
   - component: {fileID: 434567766699101635}
   - component: {fileID: 434567766699101637}
-  - component: {fileID: 434567766699101636}
   m_Layer: 5
   m_Name: Sliders Parent
   m_TagString: Untagged
@@ -5267,21 +5266,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434567766699101632}
   m_CullTransparentMesh: 1
---- !u!114 &434567766699101636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434567766699101632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b409071c2799524388e580a37a6faae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterSlider: {fileID: 434567765368336289}
-  sfxSlider: {fileID: 434567767270381567}
-  musicSlider: {fileID: 434567767334942116}
 --- !u!1 &434567766725913592
 GameObject:
   m_ObjectHideFlags: 0
@@ -6880,7 +6864,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 434567766699101636}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSlidersUI, Assembly-CSharp
         m_MethodName: ChangeSfxVolume
         m_Mode: 1
@@ -7124,7 +7108,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 434567766699101636}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSlidersUI, Assembly-CSharp
         m_MethodName: ChangeMusicVolume
         m_Mode: 1
@@ -7416,7 +7400,7 @@ RectTransform:
   - {fileID: 5636726539222492387}
   - {fileID: 7537200745854168396}
   m_Father: {fileID: 759861298565309724}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -7695,82 +7679,6 @@ MonoBehaviour:
   m_Sprite: {fileID: 21300000, guid: d6907f04811c75e4c9ddcad8380a3cad, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!1 &3170544729513750490
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 224789889769215513}
-  - component: {fileID: 1060355287675898124}
-  - component: {fileID: 4665126607937936908}
-  m_Layer: 5
-  m_Name: Visual
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &224789889769215513
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3170544729513750490}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 759861298565309724}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1060355287675898124
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3170544729513750490}
-  m_CullTransparentMesh: 1
---- !u!114 &4665126607937936908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3170544729513750490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b7ffe570e1a49d6438688819042b5c2b, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -8317,7 +8225,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 224789889769215513}
   - {fileID: 2507610405403347971}
   m_Father: {fileID: 434567767274581116}
   m_RootOrder: 3

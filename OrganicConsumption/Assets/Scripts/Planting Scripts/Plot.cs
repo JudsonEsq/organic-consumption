@@ -7,6 +7,7 @@ public class Plot : MonoBehaviour
 {
     [HideInInspector] public bool planted;
     [HideInInspector] public Plant plant;
+    [SerializeField] private MiniGameVisuals minigame;
 
     private bool interact;
     private bool gameplayActive;
@@ -34,12 +35,15 @@ public class Plot : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Dig");
         }
 
+        minigame.CloseMinigame();
+        masher.Deactivate();
         plant.GetComponent<SpriteRenderer>().DOKill();
 
         Reset();
     }
 
     private int numberOfButtonPress;
+    private Vector3 barOffset = new Vector3(30, 0, 0);
     private void DeadlyStateHarvest() 
     {
         switch (plant.GetPlantSO().deadlyStateInteraction)
@@ -54,6 +58,22 @@ public class Plot : MonoBehaviour
                 if (numberOfButtonPress >= plant.GetPlantSO().numberOfButtonPress)
                 {
                     Harvest();
+                }
+                break;
+            case PlantSO.HarvestInteraction.Hold:
+                minigame.OpenMinigame(plant.transform.position + barOffset);
+                masher.Deactivate();
+                if(Input.GetKey(KeyCode.E))
+                {
+                    if(minigame.FillBar(Time.deltaTime))
+                    {
+                        Harvest();
+                    }
+                }
+                else
+                {
+                    minigame.CloseMinigame();
+                    masher.Activate(plant.plantState, plant.GetPlantSO().deadlyStateInteraction);
                 }
                 break;
         }
@@ -87,7 +107,11 @@ public class Plot : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            if(plant != null && (plant.plantState == Plant.PlantState.Deadly || plant.plantState == Plant.PlantState.Ripe)) masher.Activate(plant.plantState);
+            if(plant != null && (plant.plantState == Plant.PlantState.Deadly || plant.plantState == Plant.PlantState.Ripe))
+            {
+                masher.Activate(plant.plantState, plant.GetPlantSO().deadlyStateInteraction);
+            }
+                
             interact = true;
         }
     }

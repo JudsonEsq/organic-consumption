@@ -769,6 +769,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1243693277507274557, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1418018699330626442, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -780,6 +784,14 @@ PrefabInstance:
     - target: {fileID: 1418018699330626442, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507610405403347971, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 98.6993
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507610405403347971, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -15.2
       objectReference: {fileID: 0}
     - target: {fileID: 3042974155283584602, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_Type
@@ -809,6 +821,10 @@ PrefabInstance:
       propertyPath: m_Maskable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4287592566876851163, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4880457927336349614, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_FillAmount
       value: 0.678
@@ -834,6 +850,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6453452243415478752, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225756112091153199, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -890,6 +910,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -938,6 +962,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -952,6 +984,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+--- !u!114 &291816356 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1678893118922407085, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
+  m_PrefabInstance: {fileID: 32902595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae0a5cf35bcb594480bbb6853a073e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &367513751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
@@ -1164,6 +1207,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1212,6 +1259,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1233,6 +1288,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1281,6 +1340,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1318,6 +1385,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1365,6 +1436,14 @@ PrefabInstance:
     - target: {fileID: 1543762876371709530, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Name
       value: Plot (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
@@ -1665,6 +1744,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1712,6 +1795,14 @@ PrefabInstance:
     - target: {fileID: 1543762876371709530, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Name
       value: Plot (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
@@ -1940,6 +2031,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1987,6 +2082,14 @@ PrefabInstance:
     - target: {fileID: 1543762876371709530, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Name
       value: Plot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
@@ -2244,6 +2347,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -2292,6 +2399,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2329,6 +2444,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2376,6 +2495,14 @@ PrefabInstance:
     - target: {fileID: 1543762876371709530, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Name
       value: Plot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
@@ -2518,6 +2645,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2565,6 +2696,14 @@ PrefabInstance:
     - target: {fileID: 1543762876371709530, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Name
       value: Plot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
@@ -3011,6 +3150,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -3059,6 +3202,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3080,6 +3231,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -3127,6 +3282,14 @@ PrefabInstance:
     - target: {fileID: 1543762876371709530, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Name
       value: Plot (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
@@ -3186,6 +3349,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -3233,6 +3400,14 @@ PrefabInstance:
     - target: {fileID: 1543762876371709530, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Name
       value: Plot (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
@@ -3350,6 +3525,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3397,6 +3576,14 @@ PrefabInstance:
     - target: {fileID: 1543762876371709530, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Name
       value: Plot (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
@@ -3588,6 +3775,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3636,6 +3827,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3673,6 +3872,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1805428197}
     m_Modifications:
+    - target: {fileID: 1452211627222443013, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1543762876371709529, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3720,6 +3923,14 @@ PrefabInstance:
     - target: {fileID: 1543762876371709530, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Name
       value: Plot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162923979836338202, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: minigame
+      value: 
+      objectReference: {fileID: 291816356}
+    - target: {fileID: 8284212987497070920, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9180349211961318307, guid: d4937b9e9559c6741a183d8ebf4b894f, type: 3}
       propertyPath: m_Sprite

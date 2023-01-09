@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Plant 1
   m_EditorClassIdentifier: 
   plantVariety: 1
-  deadlyStateInteraction: 0
+  deadlyStateInteraction: 1
   numberOfButtonPress: 5
   AttackCooldown: 4
   meleeAtackRadius: 5
