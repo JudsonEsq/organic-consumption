@@ -33,7 +33,6 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) TogglePauseScreen();
         if (Input.GetKeyDown(KeyCode.B)) EnableBreakScreen(); // for testing
         //if (Input.GetKeyDown(KeyCode.P)) OpenDeathScreen();
         if (Input.GetKeyDown(KeyCode.Escape)) CloseModals();
@@ -92,24 +91,9 @@ public class UIManager : MonoBehaviour
         ModalBackground.gameObject.SetActive(creditsOpen);
     }
 
-    public void TogglePauseScreen()
-    {
-        if (!isPlaying) return;
-        if (isPaused == false)
-        {
-            pauseScreenUI.gameObject.SetActive(true);
-        }
-        else
-        {
-            pauseScreenUI.gameObject.SetActive(false);
-        }
-        isPaused = !isPaused;
-    }
-
     public void QuitGame()
     {
         Debug.Log("Quitting Game....");
-        if (isPaused) TogglePauseScreen();
         SwitchActiveScreen(startScreenUI);
         // Comunicate to Game Manager to stop play
     }
