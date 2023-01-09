@@ -1990,7 +1990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434567765837200928, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 434567765837200932, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_LocalScale.x
@@ -2134,7 +2134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434567766029761100, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 434567766029761102, guid: 7e97ff81dff7afd4d8e20f23f42101bf, type: 3}
       propertyPath: menuYOffset

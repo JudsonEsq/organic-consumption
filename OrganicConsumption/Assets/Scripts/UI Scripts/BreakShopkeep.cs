@@ -33,12 +33,13 @@ public class BreakShopkeep : MonoBehaviour
     {
         if(stats.scrip >= price)
         {
-            uiMan.gameObject.SetActive(false);
-            winScreen.SetActive(true);
+            gameplayElements.SetActive(false);
             AudioManager audMan = FindObjectOfType<AudioManager>();
             audMan.StopAll();
             audMan.Play("Menu");
             audMan.Play("Yahoo");
+            uiMan.gameObject.SetActive(false);
+            winScreen.SetActive(true);
         }
     }
 }
