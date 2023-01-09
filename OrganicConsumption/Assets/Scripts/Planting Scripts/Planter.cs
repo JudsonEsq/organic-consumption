@@ -43,7 +43,6 @@ public class Planter : MonoBehaviour
         onBreak = false;
         breakScrn = breakPanel.GetComponent<BreakScreenUI>();
         audioMan = FindObjectOfType<AudioManager>();
-        Debug.Log(breakScrn == null);
     }
 
     private void Update()

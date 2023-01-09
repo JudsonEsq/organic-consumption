@@ -62,7 +62,6 @@ public class UIManager : MonoBehaviour
     
     public void OpenGameScreen()
     {
-        Debug.Log("Starting Game...");
         SwitchActiveScreen(hudScreenUI);
         // Comunicate to Game Manager to start play
     }
@@ -92,7 +91,6 @@ public class UIManager : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Quitting Game....");
         SwitchActiveScreen(startScreenUI);
         // Comunicate to Game Manager to stop play
     }

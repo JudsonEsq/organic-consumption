@@ -34,7 +34,6 @@ public class BreakScreenUI : MonoBehaviour
 
     private IEnumerator ProcessUI()
     {
-        Debug.Log("ProcessUI started");
         /*
          * switch (stepIndex)
          * {
@@ -62,7 +61,6 @@ public class BreakScreenUI : MonoBehaviour
         {
             yield return null;
         }
-        Debug.Log("Any Key Pressed");
         breakTimeImage.gameObject.SetActive(false);
         SlideBreakMenu(true);
         yield return (new WaitForSeconds(breakDuration));
