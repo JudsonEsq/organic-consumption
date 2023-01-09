@@ -37,8 +37,8 @@ public class BreakShopkeep : MonoBehaviour
             winScreen.SetActive(true);
             AudioManager audMan = FindObjectOfType<AudioManager>();
             audMan.StopAll();
-            audMan.Play("Yahoo");
             audMan.Play("Menu");
+            audMan.Play("Yahoo");
         }
     }
 }

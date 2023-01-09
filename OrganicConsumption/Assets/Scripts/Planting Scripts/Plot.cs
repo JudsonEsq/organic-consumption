@@ -43,7 +43,7 @@ public class Plot : MonoBehaviour
     }
 
     private int numberOfButtonPress;
-    private Vector3 barOffset = new Vector3(0, 4, 0);
+    private Vector3 barOffset = new Vector3(1.5f, 0, 0);
     private void DeadlyStateHarvest() 
     {
         switch (plant.GetPlantSO().deadlyStateInteraction)
